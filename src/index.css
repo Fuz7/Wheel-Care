@@ -1,4 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* makes sizing simpler */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('@fonts/Roboto[ital,wdth,wght].ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('@fonts/Poppins-Regular.ttf');
+}
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url('@fonts/Poppins-Light.ttf');
+}
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url('@fonts/Poppins-Medium.ttf');
+}
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  src: url('@fonts/Poppins-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('@fonts/Poppins-Bold.ttf');
+}

@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Navbar from './components/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-    <div className='min-h-lvh bg-slate-800'>
+    <div className='min-h-lvh bg-[#fcfcfc] flex flex-col'>  
+      <Navbar></Navbar>
     </div>
     </>
   )
