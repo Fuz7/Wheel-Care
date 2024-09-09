@@ -28,7 +28,7 @@
   src: url('@fonts/Poppins-Bold.ttf');
 }
 
-.dropDownContainer:hover > img {
+.dropDownContainer.active > div > img {
   transform: rotate(180deg);
 }
 
@@ -41,3 +41,4 @@
 .columnContent:hover > p > .rightBlueArrow{
   visibility: visible;
 }
+

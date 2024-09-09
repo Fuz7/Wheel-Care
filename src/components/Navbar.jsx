@@ -4,6 +4,7 @@ import searchIcon from '@images/searchIcon.svg';
 import cartIcon from '@images/cartIcon.svg';
 import accountIcon from '@images/accountIcon.svg';
 import rightBlueArrow from '@images/rightArrow.svg';
+import { useState } from 'react';
 
 export default function Navbar() {
   return (
@@ -29,30 +30,52 @@ function IconContainer() {
 }
 
 function NavLinks() {
+  const [hoveredButton, setHoveredButton] = useState(null);
   return (
     <div className="flex">
       <ul className="flex items-center gap-[80px] mr-[220px]">
         <li
-          className="dropDownContainer relative flex font-Roboto gap-[3px] 
-          font-medium text-[16px] cursor-pointer"
+          className={`dropDownContainer ${hoveredButton === 'Shop' ? 'active' : ''} 
+          relative flex font-Roboto 
+          font-medium text-[16px] cursor-pointer`}
         >
-          Shop
-          <img
-            className="transition transform ease-out duration-150"
-            src={navDropDown}
-            alt="Navbar Dropdown"
-          />
-          <DropDownContainer></DropDownContainer>
+          <div
+            onMouseEnter={() => setHoveredButton('Shop')}
+            className="flex font-medium text-[16px] font-Roboto gap-[3px]"
+          >
+            <p>Shop</p>
+            <img
+              className="transition transform ease-out duration-150"
+              src={navDropDown}
+              alt="Navbar Dropdown"
+            />
+          </div>
+          <DropDownContainer
+            hoveredButton={hoveredButton}
+            setHoveredButton={setHoveredButton}
+          ></DropDownContainer>
         </li>
-        <li className="dropDownContainer flex font-Roboto gap-[3px] font-medium text-[16px] cursor-pointer">
-          Customize
-          <img
-            className="transition transform ease-out duration-150"
-            src={navDropDown}
-            alt="Navbar Dropdown"
-          />
+        <li
+          className={`dropDownContainer 
+            ${hoveredButton === 'Customize' ? 'active' : ''}
+             flex font-Roboto gap-[3px] 
+            font-medium text-[16px] cursor-pointer`}
+        >
+          <div
+            onMouseEnter={() => setHoveredButton('Customize')}
+            className="flex font-medium text-[16px] font-Roboto gap-[3px]"
+          >
+            <p>Customize</p>
+            <img
+              className="transition transform ease-out duration-150"
+              src={navDropDown}
+              alt="Navbar Dropdown"
+            />
+          </div>
         </li>
-        <li className="flex font-Roboto gap-[3px] font-medium text-[16px] cursor-pointer">
+        <li className="flex font-Roboto gap-[3px] font-medium 
+        
+        text-[16px] cursor-pointer">
           Testimonial
         </li>
         <li className="flex font-Roboto gap-[3px] font-medium text-[16px] cursor-pointer">
@@ -79,16 +102,21 @@ function NavIconLinks() {
   );
 }
 
-function DropDownContainer() {
+function DropDownContainer({ hoveredButton, setHoveredButton }) {
   return (
     <div
-      className="min-w-[850px] min-h-[360px] 
+      onMouseLeave={() => setHoveredButton(null)}
+      className={`min-w-[850px] min-h-[360px] 
       absolute top-[47px] left-[-117px]
     bg-[#FAFAFA] border border-solid border-black
       cursor-default rounded-bl-[13px] rounded-br-[13px]
-       flex py-[35px] pl-[31px]"
+       flex py-[30px] pl-[31px] transition-opacity ease-in
+      ${hoveredButton ? 'opacity-100 visible' : 'invisible opacity-0'}
+      `}
     >
       <div className="min-w-[180px] max-w[180px] mt-2 flex flex-col mr-[56px] gap-3">
+        {hoveredButton === 'Shop'?(
+          <>
         <DropDownHeaderLinks
           title="Wheelchair"
           description="Mobility and Comfort Solutions"
@@ -101,47 +129,56 @@ function DropDownContainer() {
           title="Wheelchair Parts"
           description="Replacement parts and accessories"
         />
+          </>
+        ):null}
       </div>
       <div className="min-w-[550px] min-h[288px] bg-[#E2E2E2] rounded-[20px]">
-        <DropDownColumnsData></DropDownColumnsData>
+        <DropDownColumnsData hoveredButton={hoveredButton}></DropDownColumnsData>
       </div>
     </div>
   );
 }
 
-function DropDownColumnsData() {
+function DropDownColumnsData({hoveredButton}) {
   return (
     <div className="flex pt-[22px] pb-[26px] px-[30px] gap-[30px] min-h-[288px]">
+      {hoveredButton ==='Shop'?(
+        <>
       <div className="flex flex-col gap-[25px] min-w-[225px]">
-        <DropDownColumnsLinks title='Powered Wheelchair' />
-        <DropDownColumnsLinks title='Titanium Wheelchair' />
-        <DropDownColumnsLinks title='Quad Rugby Wheelchair' />
-        <DropDownColumnsLinks title='Lightweight Folding Wheelchair' />
-        <DropDownColumnsLinks title='All Terrain Wheelchair' />
-        <DropDownColumnsLinks title='Racing Wheelchair' />
+        <DropDownColumnsLinks title="Powered Wheelchair" />
+        <DropDownColumnsLinks title="Titanium Wheelchair" />
+        <DropDownColumnsLinks title="Quad Rugby Wheelchair" />
+        <DropDownColumnsLinks title="Lightweight Folding Wheelchair" />
+        <DropDownColumnsLinks title="All Terrain Wheelchair" />
+        <DropDownColumnsLinks title="Racing Wheelchair" />
       </div>
       <div className="flex flex-col gap-[25px] min-w-[225px]">
-        <DropDownColumnsLinks title='Basketball Wheelchair' />
-        <DropDownColumnsLinks title='Tennis Wheelchair' />
-        <DropDownColumnsLinks title='Ultra lightweight folding Wheelchair' />
-        <DropDownColumnsLinks title='Standard Everyday Wheelchair' />
-        <DropDownColumnsLinks title='Youth Wheelchair' />
-        <DropDownColumnsLinks title='Gaming Wheelchair' />
+        <DropDownColumnsLinks title="Basketball Wheelchair" />
+        <DropDownColumnsLinks title="Tennis Wheelchair" />
+        <DropDownColumnsLinks title="Ultra lightweight folding Wheelchair" />
+        <DropDownColumnsLinks title="Standard Everyday Wheelchair" />
+        <DropDownColumnsLinks title="Youth Wheelchair" />
+        <DropDownColumnsLinks title="Gaming Wheelchair" />
       </div>
+        </>
+      ):null}
     </div>
   );
 }
 
-function DropDownColumnsLinks({title}) {
-  return <div className="flex cursor-pointer columnContent relative gap-[2px] items-center max-w-fit">
-    <p className='font-Roboto font-medium text-[14px]'>
-      {title}
-      <img
-        className="absolute right-[-25px] rightBlueArrow invisible top-[2px]"
-        src={rightBlueArrow}
-        alt="Blue Arrow" />
-    </p>
-  </div>;
+function DropDownColumnsLinks({ title }) {
+  return (
+    <div className="flex cursor-pointer columnContent relative gap-[2px] items-center max-w-fit">
+      <p className="font-Roboto font-medium text-[14px]">
+        {title}
+        <img
+          className="absolute right-[-25px] rightBlueArrow invisible top-[2px]"
+          src={rightBlueArrow}
+          alt="Blue Arrow"
+        />
+      </p>
+    </div>
+  );
 }
 
 function DropDownHeaderLinks({ title, description }) {
