@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('@fonts/Roboto[ital,wdth,wght].ttf') format('truetype'),
+  src: url('@fonts/Roboto[ital,wdth,wght].ttf') format('truetype');
 }
 
 @font-face {
@@ -28,6 +28,6 @@
   src: url('@fonts/Poppins-Bold.ttf');
 }
 
-.dropDownContainer:hover > img{
+.dropDownContainer:hover > img {
   transform: rotate(180deg);
 }
