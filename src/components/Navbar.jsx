@@ -3,6 +3,7 @@ import navDropDown from '@images/navDropDown.svg';
 import searchIcon from '@images/searchIcon.svg';
 import cartIcon from '@images/cartIcon.svg';
 import accountIcon from '@images/accountIcon.svg';
+import rightBlueArrow from '@images/rightArrow.svg';
 
 export default function Navbar() {
   return (
@@ -87,29 +88,62 @@ function DropDownContainer() {
       cursor-default rounded-bl-[13px] rounded-br-[13px]
        flex py-[35px] pl-[31px]"
     >
-      <div 
-      className='min-w-[180px] max-w[180px] mt-2 flex flex-col mr-[56px] gap-3'>
-        <div className='min-w-[180px] max-w-[180px] min-h-[80px] 
+      <div className="min-w-[180px] max-w[180px] mt-2 flex flex-col mr-[56px] gap-3">
+        <a href="">
+          <div
+            className="min-w-[180px] max-w-[180px] min-h-[80px] 
           hover:bg-[#E2E2E2] rounded-2xl 
-          pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]'>
-            <p className='relative font-Roboto font-semibold'>Wheelchair</p>
-            <p className='font-Poppins text-[12px] text-[#616161] '>Mobility and comfort solutions.</p>
+          pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]
+          columnContent "
+          >
+            <p className="relative max-w-fit font-Roboto font-semibold">
+              Wheelchair
+              <img
+                src={rightBlueArrow}
+                className=" invisible rightBlueArrow absolute top-[1.75px] right-[-30px]"
+              ></img>
+            </p>
+            <p className="font-Poppins text-[12px] text-[#616161] ">
+              Mobility and comfort solutions.
+            </p>
+          </div>
+        </a>
+        <div
+          className="min-w-[180px] max-w-[180px] min-h-[80px] 
+          hover:bg-[#E2E2E2] rounded-2xl cursor-pointer
+          pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]
+          columnContent"
+        >
+          <p className="relative max-w-fit font-Roboto font-semibold">
+            Pet Wheelchair
+            <img
+              src={rightBlueArrow}
+              className=" invisible rightBlueArrow absolute top-[1.75px] right-[-30px]"
+            ></img>
+          </p>
+          <p className="font-Poppins text-[12px] text-[#616161] ">
+            Mobility aids for pets.
+          </p>
         </div>
-        <div className='min-w-[180px] max-w-[180px] min-h-[80px] 
-          hover:bg-[#E2E2E2] rounded-2xl 
-          pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]'>
-            <p className='relative font-Roboto font-semibold'>Pet Wheelchair</p>
-            <p className='font-Poppins text-[12px] text-[#616161] '>Mobility aids for pets.</p>
-        </div>
-        <div className='min-w-[180px] max-w-[180px] min-h-[80px] 
-          hover:bg-[#E2E2E2] rounded-2xl 
-          pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]'>
-            <p className='relative font-Roboto font-semibold'>Wheelchair Parts</p>
-            <p className='font-Poppins text-[12px] text-[#616161] '>Replacement parts and accessories.</p>
-        </div>
+        <div
+          className="min-w-[180px] max-w-[180px] min-h-[80px] 
+          hover:bg-[#E2E2E2] rounded-2xl cursor-pointer
+          pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]
+          columnContent"
+        >
+          <p className="relative max-w-fit font-Roboto font-semibold">Wheelchair Parts
+            <img
+              src={rightBlueArrow}
+              className=" invisible rightBlueArrow absolute top-[1.75px] right-[-30px]"
+            ></img>
 
+          </p>
+          <p className="font-Poppins text-[12px] text-[#616161] ">
+            Replacement parts and accessories.
+          </p>
+        </div>
       </div>
-      <div className='min-w-[600px] min-h[288px] bg-[#E2E2E2] rounded-[20px]'></div>
+      <div className="min-w-[600px] min-h[288px] bg-[#E2E2E2] rounded-[20px]"></div>
     </div>
   );
 }
