@@ -82,68 +82,84 @@ function NavIconLinks() {
 function DropDownContainer() {
   return (
     <div
-      className="min-w-[900px] min-h-[360px] 
+      className="min-w-[850px] min-h-[360px] 
       absolute top-[47px] left-[-117px]
     bg-[#FAFAFA] border border-solid border-black
       cursor-default rounded-bl-[13px] rounded-br-[13px]
        flex py-[35px] pl-[31px]"
     >
       <div className="min-w-[180px] max-w[180px] mt-2 flex flex-col mr-[56px] gap-3">
-        <a href="">
-          <div
-            className="min-w-[180px] max-w-[180px] min-h-[80px] 
-          hover:bg-[#E2E2E2] rounded-2xl 
-          pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]
-          columnContent "
-          >
-            <p className="relative max-w-fit font-Roboto font-semibold">
-              Wheelchair
-              <img
-                src={rightBlueArrow}
-                className=" invisible rightBlueArrow absolute top-[1.75px] right-[-30px]"
-              ></img>
-            </p>
-            <p className="font-Poppins text-[12px] text-[#616161] ">
-              Mobility and comfort solutions.
-            </p>
-          </div>
-        </a>
-        <div
-          className="min-w-[180px] max-w-[180px] min-h-[80px] 
-          hover:bg-[#E2E2E2] rounded-2xl cursor-pointer
-          pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]
-          columnContent"
-        >
-          <p className="relative max-w-fit font-Roboto font-semibold">
-            Pet Wheelchair
-            <img
-              src={rightBlueArrow}
-              className=" invisible rightBlueArrow absolute top-[1.75px] right-[-30px]"
-            ></img>
-          </p>
-          <p className="font-Poppins text-[12px] text-[#616161] ">
-            Mobility aids for pets.
-          </p>
-        </div>
-        <div
-          className="min-w-[180px] max-w-[180px] min-h-[80px] 
-          hover:bg-[#E2E2E2] rounded-2xl cursor-pointer
-          pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]
-          columnContent"
-        >
-          <p className="relative max-w-fit font-Roboto font-semibold">Wheelchair Parts
-            <img
-              src={rightBlueArrow}
-              className=" invisible rightBlueArrow absolute top-[1.75px] right-[-30px]"
-            ></img>
-
-          </p>
-          <p className="font-Poppins text-[12px] text-[#616161] ">
-            Replacement parts and accessories.
-          </p>
-        </div>
+        <DropDownHeaderLinks
+          title="Wheelchair"
+          description="Mobility and Comfort Solutions"
+        />
+        <DropDownHeaderLinks
+          title="Pet Wheelchair"
+          description={'Mobility aids for pets.'}
+        />
+        <DropDownHeaderLinks
+          title="Wheelchair Parts"
+          description="Replacement parts and accessories"
+        />
       </div>
-      <div className="min-w-[600px] min-h[288px] bg-[#E2E2E2] rounded-[20px]"></div>
+      <div className="min-w-[550px] min-h[288px] bg-[#E2E2E2] rounded-[20px]">
+        <DropDownColumnsData></DropDownColumnsData>
+      </div>
+    </div>
+  );
+}
+
+function DropDownColumnsData() {
+  return (
+    <div className="flex pt-[22px] pb-[26px] px-[30px] gap-[30px] min-h-[288px]">
+      <div className="flex flex-col gap-[25px] min-w-[225px]">
+        <DropDownColumnsLinks title='Powered Wheelchair' />
+        <DropDownColumnsLinks title='Titanium Wheelchair' />
+        <DropDownColumnsLinks title='Quad Rugby Wheelchair' />
+        <DropDownColumnsLinks title='Lightweight Folding Wheelchair' />
+        <DropDownColumnsLinks title='All Terrain Wheelchair' />
+        <DropDownColumnsLinks title='Racing Wheelchair' />
+      </div>
+      <div className="flex flex-col gap-[25px] min-w-[225px]">
+        <DropDownColumnsLinks title='Basketball Wheelchair' />
+        <DropDownColumnsLinks title='Tennis Wheelchair' />
+        <DropDownColumnsLinks title='Ultra lightweight folding Wheelchair' />
+        <DropDownColumnsLinks title='Standard Everyday Wheelchair' />
+        <DropDownColumnsLinks title='Youth Wheelchair' />
+        <DropDownColumnsLinks title='Gaming Wheelchair' />
+      </div>
+    </div>
+  );
+}
+
+function DropDownColumnsLinks({title}) {
+  return <div className="flex cursor-pointer columnContent relative gap-[2px] items-center max-w-fit">
+    <p className='font-Roboto font-medium text-[14px]'>
+      {title}
+      <img
+        className="absolute right-[-25px] rightBlueArrow invisible top-[2px]"
+        src={rightBlueArrow}
+        alt="Blue Arrow" />
+    </p>
+  </div>;
+}
+
+function DropDownHeaderLinks({ title, description }) {
+  return (
+    <div
+      className="min-w-[180px] max-w-[180px] min-h-[80px] 
+      hover:bg-[#E2E2E2] rounded-2xl cursor-pointer
+      pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]
+      columnContent"
+    >
+      <p className="relative max-w-fit font-Roboto font-semibold">
+        {title}
+        <img
+          src={rightBlueArrow}
+          className=" invisible rightBlueArrow absolute top-[1.75px] right-[-30px]"
+        ></img>
+      </p>
+      <p className="font-Poppins text-[12px] text-[#616161] ">{description}</p>
     </div>
   );
 }
