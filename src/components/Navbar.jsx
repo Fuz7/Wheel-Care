@@ -35,7 +35,7 @@ function NavLinks() {
   const [headerIndex, setHeaderIndex] = useState(0);
   return (
     <div className="flex">
-      <ul className="flex items-center gap-[80px] mr-[220px]">
+      <ul className="flex items-center gap-[80px] mr-[180px]">
         <li
           className={`dropDownContainer ${hoveredButton === 'Shop' ? 'active' : ''} 
           relative flex font-Roboto 
@@ -262,6 +262,26 @@ function DropDownColumnsData({ hoveredButton, headerIndex, refElement }) {
             <DropDownColumnsLinks title="Bird Wheelchair" />
             <DropDownColumnsLinks title="Pig Wheelchair" />
             <DropDownColumnsLinks title="Chinese Wheelchair" />
+          </div>
+        </>
+      ) : null}
+      {hoveredButton === 'Shop' && headerIndex === 2 ? (
+        <>
+          <div className="flex flex-col gap-[25px] min-w-[225px]">
+            <DropDownColumnsLinks title="Wheelchair Tire Accesories" />
+            <DropDownColumnsLinks title="Wheelchair Bags " />
+            <DropDownColumnsLinks title="Wheelchair Pouches" />
+            <DropDownColumnsLinks title="Wheelchair Straps" />
+            <DropDownColumnsLinks title="Wheelchair Brakes" />
+            <DropDownColumnsLinks title="Wheelchair Carriers" />
+          </div>
+          <div className="flex flex-col gap-[25px] min-w-[225px]">
+            <DropDownColumnsLinks title="Wheelchair Tire Pumps" />
+            <DropDownColumnsLinks title="Wheelchair Tire Inflators" />
+            <DropDownColumnsLinks title="Wheelchair Tire Adapters" />
+            <DropDownColumnsLinks title="Wheelchair Side Guards" />
+            <DropDownColumnsLinks title="Wheelchair Upholstery" />
+            <DropDownColumnsLinks title="Disability Vehicle Hand Controls" />
           </div>
         </>
       ) : null}

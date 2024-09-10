@@ -21,7 +21,8 @@ export default function Home() {
           </p>
           <button className="max-w-[150px] min-h-[48px] flex 
             items-center justify-center bg-[#5D37B7]
-             text-white rounded-[3px] font-Poppins-SemiBold">Get In Touch</button>
+             text-white rounded-[3px] font-Poppins-SemiBold
+                ">Get In Touch</button>
         </div>
       </div>
     </div>
