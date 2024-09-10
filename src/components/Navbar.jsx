@@ -6,6 +6,7 @@ import cartIcon from '@images/cartIcon.svg';
 import accountIcon from '@images/accountIcon.svg';
 import { useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
@@ -23,10 +24,16 @@ export default function Navbar() {
 
 function IconContainer() {
   return (
-    <div className="ml-[114px] mr-[127px] flex gap-4 items-center ">
+    <div className='ml-[114px] mr-[127px] flex gap-4 items-center '>
+    
+    <Link  to={'/home'}>
       <img src={navbarIcon} alt="navBarIcon" className="" />
+    </Link>  
+    <Link to={'/home'}>
       <p className="font-Roboto font-bold text-2xl">Wheel Care</p>
+    </Link>
     </div>
+
   );
 }
 
