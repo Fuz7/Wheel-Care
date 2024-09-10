@@ -28,6 +28,11 @@
   src: url('@fonts/Poppins-Bold.ttf');
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('@fonts/Inter-variable.ttf');
+}
+
 .dropDownContainer.active > div > img {
   transform: rotate(180deg);
 }

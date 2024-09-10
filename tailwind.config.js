@@ -9,7 +9,8 @@ export default {
         'Poppins-Light':['Poppins-Light'],
         'Poppins-Medium':['Poppins-Medium'],
         'Poppins-SemiBold':['Poppins-SemiBold'],
-        'Poppins-Bold':['Poppins-Bold']
+        'Poppins-Bold':['Poppins-Bold'],
+        'Inter':['Inter']
       }
     },
   },
