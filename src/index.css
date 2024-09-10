@@ -37,8 +37,3 @@
 .columnContent:hover > p:first-child{
   color: #1660CF;
 }
-
-.columnContent:hover > p > .rightBlueArrow{
-  visibility: visible;
-}
-
