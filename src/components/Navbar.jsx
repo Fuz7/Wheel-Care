@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <>
-      <nav className="border-b-[1px] border-[#414141] border-solid items-center">
+      <nav className="border-b-[1px] sticky top-0
+       bg-white border-[#414141] border-solid items-center z-10">
         <div className="min-h-[70px] flex items-center mx-auto max-w-[1440px]">
           <IconContainer></IconContainer>
           <NavLinks></NavLinks>
