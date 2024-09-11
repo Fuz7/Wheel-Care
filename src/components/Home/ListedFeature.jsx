@@ -17,9 +17,9 @@ export function ListedFeature() {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current, // Use the first item as the trigger
-        start: 'center 75%',
-        end: 'bottom 15%',
-        scrub: true,
+        start: 'top 75%',
+        end: 'center 55%',
+        scrub: 1,
         markers: true,
       },
 
@@ -35,18 +35,7 @@ export function ListedFeature() {
         );
       }
     });
-    gsap.to(containerRef.current,{
-      y: 500,
-      duration: 4,
-      scrollTrigger:{
-        trigger: containerRef.current,
-        start:'bottom 85%',
-        end:'bottom 5%',
-        scrub: true,
-        toggleActions: 'play none none none ',
-        markers: true,
-      }
-    })
+
   }, []);
   return (
     <div
