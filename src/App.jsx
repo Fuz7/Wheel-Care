@@ -1,4 +1,3 @@
-import Navbar from './components/Navbar';
 import Home from './components/Home/Home';
 import Layout from './components/Layout';
 import { createBrowserRouter, RouterProvider,Navigate } from 'react-router-dom';

@@ -1,7 +1,7 @@
 import { ListedFeature } from './ListedFeature';
 export default function Home() {
   return (
-    <div className="min-h-lvh bg-[#FCFCFC]">
+    <div className="min-h-[3000px] bg-[#FCFCFC]">
       <div className="flex gap-[90px] mt-[180px]">
         <p
           className="font-Roboto leading-[1.24] tracking-widest 
