@@ -33,6 +33,10 @@
   src: url('@fonts/Inter-variable.ttf');
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .dropDownContainer.active > div > img {
   transform: rotate(180deg);
 }

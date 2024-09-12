@@ -1,4 +1,6 @@
-import { ListedFeature } from './ListedFeature';
+import ListedFeature from './ListedFeature';
+import Testimonial from './Testimonial';
+
 export default function Home() {
   return (
     <div className="min-h-[3000px] bg-[#FCFCFC]">
@@ -31,6 +33,7 @@ export default function Home() {
         </div>
       </div>
       <ListedFeature />
+      <Testimonial />
     </div>
   );
 }

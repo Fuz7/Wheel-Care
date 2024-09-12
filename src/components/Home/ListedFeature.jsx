@@ -9,7 +9,7 @@ import featExperts from '@images/featExperts.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function ListedFeature() {
+export default function ListedFeature() {
 
   const itemRefs = useRef([]); // An array of refzs
   const containerRef = useRef(null)
@@ -20,7 +20,6 @@ export function ListedFeature() {
         start: 'top 30%',
         end: '+=1600',
         scrub:1,
-        markers: true,
         pinSpacing:false,
         toggleActions:'play pause complete reset ',
         pin:true,
@@ -30,8 +29,6 @@ export function ListedFeature() {
       // Apply desired behavior here
       // Example: Fix position
       if (scrollProgress > 0 && scrollProgress < 1) {
-          console.log(scrollProgress)
-
         containerRef.current.style.transform = ''
       } else if(scrollProgress === 1) {
         containerRef.current.style.transform = "translate(0,1600px)";
@@ -58,8 +55,8 @@ export function ListedFeature() {
 
   }, []);
   return (
-    <div
-      className="min-h-[465px] min-w-full mt-[350px] bg-[#6228B4]
+    <section
+      className="min-h-[465px] min-w-full max-w-full mt-[350px] bg-[#6228B4]
        flex flex-col gap-[58px] items-center  "
        ref={containerRef}
        >
@@ -90,7 +87,7 @@ className="mt-[25px] font-Poppins-SemiBold text-white text-[40px]">
           text={'DESIGNED BY LEADING MOBILITY EXPERTS'}
           />
       </div>
-    </div>
+    </section>
    
   );
 }
