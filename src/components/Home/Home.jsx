@@ -1,5 +1,7 @@
 import ListedFeature from './ListedFeature';
-import Testimonial from './Testimonial';
+import Reviews from './Reviews';
+
+
 
 export default function Home() {
   return (
@@ -33,7 +35,7 @@ export default function Home() {
         </div>
       </div>
       <ListedFeature />
-      <Testimonial />
+      <Reviews />
     </div>
   );
 }
