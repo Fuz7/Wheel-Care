@@ -1,6 +1,6 @@
 import ListedFeature from './ListedFeature';
 import Reviews from './Reviews';
-
+import BestSeller from './BestSeller';
 
 
 export default function Home() {
@@ -35,6 +35,7 @@ export default function Home() {
         </div>
       </div>
       <ListedFeature />
+      <BestSeller />
       <Reviews />
     </div>
   );
