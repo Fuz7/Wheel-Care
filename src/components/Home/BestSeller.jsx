@@ -51,8 +51,11 @@ const Cards = forwardRef(({imgSrc,title,titleTag,price},ref)=> {
   return (<div 
     ref={ref}
     className="min-w-[300px] max-w-[300px] bg-white min-h-[503px] max-h-[503px]
-    drop-shadow-[0_1px_4px_rgba(0,0,0,0.41)] flex flex-col items-center ">
-      <img className=' max-w-[266px] min-w-[266px] min-h-[308px] max-h-[308px] mt-[18px]' src={imgSrc} alt="Best Seller" />
+    drop-shadow-[0_1px_4px_rgba(0,0,0,0.41)] flex flex-col items-center
+    cursor-pointer transition-transform
+          hover:scale-110 ">
+      <img className=' max-w-[266px] min-w-[266px] min-h-[308px] max-h-[308px]
+      drop-shadow-md mt-[18px]' src={imgSrc} alt="Best Seller" />
       <p className='font-Poppins-Bold mt-[20px] text-[20px]'>{title}</p>
       <p className='font-Poppins-Medium text-[20px]'>{titleTag}</p>
       <p className='font-Poppins text-[12px] mt-[16px]'>Starts At</p>

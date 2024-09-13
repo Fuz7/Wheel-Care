@@ -108,7 +108,7 @@ const ReviewCard = forwardRef(
       <div
         ref={ref}
         className="min-w-[350px] max-w-[350px] max-h-[550px] bg-white
-          rounded-t-[200px] flex flex-col items-center"
+          rounded-t-[200px] flex flex-col items-center "
       >
         <img className="mt-[40px]" src={imgSrc} alt="Reviewed Wheelchair" />
         <p className="mt-[18px] font-Poppins-SemiBold text-[24px]">{header}</p>
