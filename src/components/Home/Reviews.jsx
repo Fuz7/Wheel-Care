@@ -2,21 +2,68 @@
 import tankWheelchair from '@images/tankWheelchair.svg';
 import Rating from '@mui/material/Rating';
 import chubbyWheelchair from '@images/chubbyWheelchair.png';
-import morganWheelchair from '@images/morganWheelchair.png'
+import morganWheelchair from '@images/morganWheelchair.png';
+import { forwardRef, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Reviews() {
+  const reviewsRef = useRef([]);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 15%',
+        end: '+=2000',
+        pinSpacing: false,
+        scrub: 1,
+        pin: true,
+        markers: true,
+        onUpdate: (self) => {
+          const scrollProgress = self.progress; // Scroll progress (0 to 1)
+          // Apply desired behavior here
+          // Example: Fix position
+          if (scrollProgress > 0 && scrollProgress < 1) {
+            containerRef.current.style.transform = '';
+          } else if (scrollProgress === 1) {
+            containerRef.current.style.transform = 'translate(0,2000px)';
+          }
+        },
+      },
+    });
+
+    reviewsRef.current.forEach((ref, ) => {
+      if (ref) {
+        timeline.fromTo(
+          ref,
+          { opacity: 0, y: 200 },
+          { opacity: 1, y:0, duration: 2, stagger:4 },
+        );
+      }
+    });
+    
+    timeline.to(reviewsRef.current[0],{
+      duration:4,
+    })
+
+  }, []);
+
   return (
-    <section className="min-h-[450px] gap-[66px] mt-[2200px] mb-[600px] flex flex-col">
-      <p className="self-center font-Poppins-Medium text-[48px]">
-        Reviews
-      </p>
+    <section className="min-h-[450px] gap-[66px] mt-[2200px] mb-[3000px] flex flex-col">
+      <p className="self-center font-Poppins-Medium text-[48px]">Reviews</p>
       <div
+        ref={containerRef}
         className="min-w-full min-h-[700px] bg-[rgb(195,179,242)] pt-[67px]
       flex justify-center gap-[150px]"
       >
         <ReviewCard
           imgSrc={tankWheelchair}
           rating={4.5}
+          ref={(el) => (reviewsRef.current[0] = el)}
           header={'Jorge'}
           description="After the first two wheelchairs 
           we were desperately looking for one that was 
@@ -29,6 +76,7 @@ export default function Reviews() {
         <ReviewCard
           imgSrc={chubbyWheelchair}
           rating={5}
+          ref={(el) => (reviewsRef.current[1] = el)}
           header={'Buddy'}
           description="Hello! I rented a rear support wheelchair for my miniature 
           dog about two weeks ago and I wanted to inform you that I wanted to 
@@ -39,6 +87,7 @@ export default function Reviews() {
         <ReviewCard
           imgSrc={morganWheelchair}
           rating={4.7}
+          ref={(el) => (reviewsRef.current[2] = el)}
           header={'Morgan'}
           description="He is completely comfortable in his cart now – and the 
           transformation in his personality because he feels more like a “dog” is 
@@ -54,32 +103,37 @@ export default function Reviews() {
   );
 }
 
-function ReviewCard({ imgSrc, rating, header, description }) {
-  return (
-    <div
-      className="min-w-[350px] max-w-[350px] max-h-[550px] bg-white
+const ReviewCard = forwardRef(
+  ({ imgSrc, rating, header, description }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className="min-w-[350px] max-w-[350px] max-h-[550px] bg-white
           rounded-t-[200px] flex flex-col items-center"
-    >
-      <img className="mt-[40px]" src={imgSrc} alt="Reviewed Wheelchair" />
-      <p className="mt-[18px] font-Poppins-SemiBold text-[24px]">{header}</p>
-      <Rating
-        className="mt-[12px]"
-        readOnly
-        defaultValue={rating}
-        precision={0.1}
-        size="large"
-        sx={{
-          '& .MuiRating-iconFilled': {
-            color: '#6228B4', // Set the filled star color to purple
-          },
-        }}
-      />
-      <p
-        className="max-w-[295px] text-center font-Poppins text-[14px] 
-            mt-[20px]"
       >
-        {description}
-      </p>
-    </div>
-  );
-}
+        <img className="mt-[40px]" src={imgSrc} alt="Reviewed Wheelchair" />
+        <p className="mt-[18px] font-Poppins-SemiBold text-[24px]">{header}</p>
+        <Rating
+          className="mt-[12px]"
+          readOnly
+          defaultValue={rating}
+          precision={0.1}
+          size="large"
+          sx={{
+            '& .MuiRating-iconFilled': {
+              color: '#6228B4', // Set the filled star color to purple
+            },
+          }}
+        />
+        <p
+          className="max-w-[295px] text-center font-Poppins text-[14px] 
+            mt-[20px]"
+        >
+          {description}
+        </p>
+      </div>
+    );
+  },
+);
+
+ReviewCard.displayName = 'ReviewCard';
