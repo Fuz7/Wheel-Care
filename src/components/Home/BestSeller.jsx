@@ -15,8 +15,8 @@ export default function BestSeller(){
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 30%", // Adjust this value to change when the animation starts
-        end: "top 20%", // Adjust this value to change when the animation ends
+        start: "top 40%", // Adjust this value to change when the animation starts
+        end: "top 30%", // Adjust this value to change when the animation ends
         scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         markers: true, // Remove this in production
       }
@@ -24,15 +24,15 @@ export default function BestSeller(){
 
     // Animate all cards simultaneously
     tl.fromTo(cardContainerRef.current, 
-      {opacity:0,scale:0},
-      {scale:1,opacity:1,duration:1,ease:'back.out(1.7)'},
+      {opacity:0.0,},
+      {opacity:1,duration:1,ease:'back.out(1.7)'},
     );
 
   },[])
 
   return(
     <section ref={containerRef} className="mt-[2300px] flex flex-col gap-[50px]">
-      <p className="self-center font-Poppins-SemiBold text-[48px]">Our Best Seller</p>
+      <h2 className="self-center font-Poppins-SemiBold text-[48px]">Our Best Seller</h2>
       <div  ref={cardContainerRef} className="flex gap-[52px] self-center">
         <Cards imgSrc={bestSellerJorge} title='Wheelchair for Dogs'
         titleTag='Rear Support' price='70' />

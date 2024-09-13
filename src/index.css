@@ -46,3 +46,11 @@ body{
 .columnContent:hover > p:first-child{
   color: #1660CF;
 }
+
+.faqDropdown--active > div > img{
+  transform: rotate(180deg);
+}
+
+.faqContent--active{
+  
+}

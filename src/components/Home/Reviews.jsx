@@ -53,7 +53,7 @@ export default function Reviews() {
 
   return (
     <section className="min-h-[450px] gap-[66px] mt-[1100px] mb-[3000px] flex flex-col">
-      <p className="self-center font-Poppins-Medium text-[48px]">Reviews</p>
+      <h2 className="self-center font-Poppins-Medium text-[48px]">Reviews</h2>
       <div
         ref={containerRef}
         className="min-w-full min-h-[700px] bg-[rgb(195,179,242)] pt-[67px]
