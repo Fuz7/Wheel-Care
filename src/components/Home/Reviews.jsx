@@ -22,7 +22,6 @@ export default function Reviews() {
         pinSpacing: false,
         scrub: 1,
         pin: true,
-        markers: true,
         onUpdate: (self) => {
           const scrollProgress = self.progress; // Scroll progress (0 to 1)
           // Apply desired behavior here
@@ -41,7 +40,7 @@ export default function Reviews() {
         timeline.fromTo(
           ref,
           { opacity: 0, y: 200 },
-          { opacity: 1, y:0, duration: 2, stagger:4 },
+          { opacity: 1, y:0, duration: 2, stagger:4, ease:'back.out(1.7)' },
         );
       }
     });
@@ -53,7 +52,7 @@ export default function Reviews() {
   }, []);
 
   return (
-    <section className="min-h-[450px] gap-[66px] mt-[2200px] mb-[3000px] flex flex-col">
+    <section className="min-h-[450px] gap-[66px] mt-[1100px] mb-[3000px] flex flex-col">
       <p className="self-center font-Poppins-Medium text-[48px]">Reviews</p>
       <div
         ref={containerRef}
