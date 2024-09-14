@@ -2,6 +2,7 @@ import ListedFeature from './ListedFeature';
 import Reviews from './Reviews';
 import BestSeller from './BestSeller';
 import FAQ from './FAQ';
+import TheTeam from './TheTeam';
 
 
 
@@ -39,6 +40,7 @@ export default function Home() {
       <ListedFeature />
       <BestSeller />
       <Reviews />
+      <TheTeam/>
       <FAQ />
     </div>
   );
