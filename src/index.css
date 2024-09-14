@@ -50,7 +50,3 @@ body{
 .faqDropdown--active > div > img{
   transform: rotate(180deg);
 }
-
-.faqContent--active{
-  
-}
