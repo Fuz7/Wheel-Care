@@ -6,7 +6,7 @@ export default function FAQ() {
   const [isActive, setIsActive] = useState(false);
   return (
     <section
-      className="mt-[400px] mb-[1000px] flex min-w-full pl-[330px] 
+      className="mt-[400px] mb-[500px] flex min-w-full pl-[330px] 
     gap-[70px] pr-[360px]"
     >
       <h2 className="font-Poppins-SemiBold text-[64px] max-w-[457px]">

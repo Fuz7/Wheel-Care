@@ -19,6 +19,7 @@ export default function BestSeller() {
         end: 'top 30%', // Adjust this value to change when the animation ends
         scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         markers: true, // Remove this in production
+        
       },
     });
 
@@ -33,7 +34,7 @@ export default function BestSeller() {
   return (
     <section
       ref={containerRef}
-      className="mt-[2300px] flex flex-col gap-[50px]"
+      className="mt-[1800px] flex flex-col gap-[50px]"
     >
       <h2 className="self-center font-Poppins-SemiBold text-[48px]">
         Our Best Seller
@@ -72,7 +73,7 @@ const Cards = forwardRef(({ imgSrc, title, rating, price, review }, ref) => {
       className="min-w-[353px] max-w-[353px] bg-white min-h-[437px] max-h-[437px]
     drop-shadow-[0_1px_4px_rgba(0,0,0,0.41)] flex flex-col items-center
     cursor-pointer transition-transform
-           hover:translate-y-[-5px]  "
+           hover:translate-y-[-5px]  rounded-sm "
     >
       <img
         className=" max-w-[250px] min-w-[250px] min-h-[250px] max-h-[250px]

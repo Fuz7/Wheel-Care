@@ -13,7 +13,7 @@ import { useState } from 'react';
 export default function TheTeam() {
   const [pressed, setPressed] = useState(0);
   return (
-    <div className="mt-[400px] flex flex-col items-center">
+    <div className="mt-[300px] flex flex-col items-center">
       <h2 className="font-Poppins-SemiBold text-[48px]">Meet The Team</h2>
       <div
         className="flex mt-[120px] max-w-[1620px] min-w-[1620px] 
@@ -78,7 +78,7 @@ export default function TheTeam() {
             imgSrc={jayraldDionaldo}
             name={'Jayrald Dionaldo'}
             index={3}
-            role={'Eletric Fan Repairman'}
+            role={'Electric Fan Repairman'}
             pressed={pressed}
             skills={'solda , pilit og tape,  flux inhaler, '}
             description={`Meet our Electric Fan Repairman, the master of keeping 
@@ -164,10 +164,10 @@ function TheTeamCard({
       <div className="flex min-w-[450px] flex-col">
         <p className="font-Poppins-SemiBold text-[32px]">{name}</p>
         <div className="flex mt-[10px] gap-[13px]">
-          <img className="cursor-pointer" src={xLogo} alt="" />
-          <img className="cursor-pointer" src={instragramLogo} alt="" />
           <img className="cursor-pointer" src={facebookLogo} alt="" />
           <img className="cursor-pointer" src={linkedInLogo} alt="" />
+          <img className="cursor-pointer" src={xLogo} alt="" />
+          <img className="cursor-pointer" src={instragramLogo} alt="" />
         </div>
         <p className="font-Poppins text-[24px] mt-[40px]">Role: {role}</p>
         <p className="font-Poppins text-[16px] mt-[20px] max-w-[450px]">
