@@ -50,3 +50,7 @@ body{
 .faqDropdown--active > div > img{
   transform: rotate(180deg);
 }
+
+.shopCardHovered > span{
+  transform: translateY(0px);
+}
