@@ -1,6 +1,17 @@
 /* eslint-disable react/prop-types */
-import ultraLight from '@images/ultraLight.png';
 import Rating from '@mui/material/Rating';
+import ultraLight from '@images/ultraLight.png';
+import aeroWheelchair from '@images/aeroWheelchair.png'
+import racingChair from '@images/racingChair.png'
+import standardWheelchair from '@images/standardWheelchair.png'
+import celebralPalsyWheelchair from '@images/celebralPalsyWheelchair.png'
+import cyberChair from '@images/cyberChair.png'
+import dogWheelchair from '@images/dogWheelchair.png'
+import hogRider from '@images/hogRider.png'
+import happyWheels from '@images/happyWheels.png'
+import billyHotChair from '@images/billyHotChair.png'
+import adjustableWheelchair from '@images/adjustableWheelchair.png'
+import guineaWheels from '@images/guineaWheels.png'
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -62,44 +73,44 @@ function WheelChairContainer() {
         <ShopCard
           name={'Ultra Light Wheelchair'}
           imgSrc={ultraLight}
-          price="90"
-          rating={4.6}
+          price="550"
+          rating={4.7}
           tags={'Sports, Ultra lightweight, Folding'}
         />
         <ShopCard
-          name={'Ultra Light Wheelchair'}
-          imgSrc={ultraLight}
-          price="90"
-          rating={4.6}
-          tags={'Sports, Ultra lightweight, Folding'}
+          name={'Aero Wheelchair'}
+          imgSrc={aeroWheelchair}
+          price="900"
+          rating={4.8}
+          tags={'Sports, lightweight, Folding, Bestseller'}
         />
         <ShopCard
-          name={'Ultra Light Wheelchair'}
-          imgSrc={ultraLight}
-          price="90"
+          name={'Cyber Wheelchair'}
+          imgSrc={cyberChair}
+          price="1100"
           rating={4.6}
-          tags={'Sports, Ultra lightweight, Folding'}
+          tags={'Cyberpunk, Heavy Duty'}
         />
         <ShopCard
-          name={'Ultra Light Wheelchair'}
-          imgSrc={ultraLight}
+          name={'Racing Wheelchair'}
+          imgSrc={racingChair}
           price="90"
           rating={4.6}
-          tags={'Sports, Ultra lightweight, Folding'}
+          tags={'Sports, Ultra lightweight, Racing Wheelchair'}
         />
         <ShopCard
-          name={'Ultra Light Wheelchair'}
-          imgSrc={ultraLight}
-          price="90"
-          rating={4.6}
-          tags={'Sports, Ultra lightweight, Folding'}
+          name={'Standard Wheelchair'}
+          imgSrc={standardWheelchair}
+          price="200"
+          rating={4.4}
+          tags={'Everyday Use, Lightweight'}
         />
         <ShopCard
-          name={'Ultra Light Wheelchair'}
-          imgSrc={ultraLight}
-          price="90"
-          rating={4.6}
-          tags={'Sports, Ultra lightweight, Folding'}
+          name={'Celebral Palsy Wheelchair'}
+          imgSrc={celebralPalsyWheelchair}
+          price="400"
+          rating={4.5}
+          tags={'Everyday Use, Folding'}
         />
       </div>
     </div>
@@ -137,7 +148,7 @@ function ShopCard({ name, imgSrc, price, rating, tags }) {
       >
         {name}
       </p>
-      <img className="mt-[5px]" src={imgSrc} alt="Wheelchair" />
+      <img className="mt-[5px] rounded-[1px]" src={imgSrc} alt="Wheelchair" />
       <p className="mt-auto mb-[5px] font-Roboto  text-[20px]">${price}</p>
       <span
         className="absolute bottom-0 left-0 min-w-[240px]
@@ -229,47 +240,47 @@ function PetWheelChairContainer() {
         <div className="flex gap mt-[25px]">
           <Link to={'/'}>
             <ShopCard
-              name={'Ultra Light Wheelchair'}
-              imgSrc={ultraLight}
-              price="90"
-              rating={4.6}
-              tags={'Sports, Ultra lightweight, Folding'}
+              name={'Walking Wheels'}
+              imgSrc={dogWheelchair}
+              price="130"
+              rating={4.5}
+              tags={'Dog Wheelchair'}
             />
           </Link>
           <ShopCard
-            name={'Ultra Light Wheelchair'}
-            imgSrc={ultraLight}
-            price="90"
-            rating={4.6}
-            tags={'Sports, Ultra lightweight, Folding'}
+            name={'Hog Rider '}
+            imgSrc={hogRider}
+            price="320"
+            rating={5.0}
+            tags={'Pig Wheelchair'}
+          />
+          <ShopCard
+            name={'Happy Wheels'}
+            imgSrc={happyWheels}
+            price="70"
+            rating={4.4}
+            tags={'Cat Wheelchair'}
+          />
+          <ShopCard
+            name={'Billy Hot Wheelchair'}
+            imgSrc={billyHotChair}
+            price="60"
+            rating={4.8}
+            tags={'Duck Wheelchair'}
+          />
+          <ShopCard
+            name={'Adjustable Wheelchair'}
+            imgSrc={adjustableWheelchair}
+            price="40"
+            rating={4.7}
+            tags={'Dog Wheelchair, Adjustable'}
           />
           <ShopCard
             name={'Ultra Light Wheelchair'}
-            imgSrc={ultraLight}
-            price="90"
+            imgSrc={guineaWheels}
+            price="20"
             rating={4.6}
-            tags={'Sports, Ultra lightweight, Folding'}
-          />
-          <ShopCard
-            name={'Ultra Light Wheelchair'}
-            imgSrc={ultraLight}
-            price="90"
-            rating={4.6}
-            tags={'Sports, Ultra lightweight, Folding'}
-          />
-          <ShopCard
-            name={'Ultra Light Wheelchair'}
-            imgSrc={ultraLight}
-            price="90"
-            rating={4.6}
-            tags={'Sports, Ultra lightweight, Folding'}
-          />
-          <ShopCard
-            name={'Ultra Light Wheelchair'}
-            imgSrc={ultraLight}
-            price="90"
-            rating={4.6}
-            tags={'Sports, Ultra lightweight, Folding'}
+            tags={'Hamster Wheelchair'}
           />
         </div>
       </div>
