@@ -78,7 +78,7 @@ function WheelChairContainer() {
           rating={4.7}
           tags={'Sports, Ultra lightweight, Folding'}
         />
-        <Link to={'/shop/itemSelected'}>
+        <Link to={'/shop/productSelected'}>
         <ShopCard
           name={'Aero Dynamic Wheelchair'}
           imgSrc={aeroWheelchair}

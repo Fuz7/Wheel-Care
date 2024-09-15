@@ -1,6 +1,6 @@
 import Home from './components/Home/Home';
 import Layout from './components/Layout';
-import ItemSelected from './components/Shop/ItemSelected';
+import ProductSelected from './components/Shop/ProductSelected';
 import Shop from './components/Shop/Shop';
 import { createBrowserRouter, RouterProvider,Navigate } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Navigate  to={'/home'} /> },
       { path: '/home', element: <Home /> },
       { path:'/shop', element: <Shop /> },
-      {path:'/shop/itemSelected', element: <ItemSelected /> }
+      {path:'/shop/productSelected', element: <ProductSelected /> }
     ],
   },
 ]);
