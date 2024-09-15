@@ -78,13 +78,15 @@ function WheelChairContainer() {
           rating={4.7}
           tags={'Sports, Ultra lightweight, Folding'}
         />
+        <Link to={'/shop/itemSelected'}>
         <ShopCard
-          name={'Aero Wheelchair'}
+          name={'Aero Dynamic Wheelchair'}
           imgSrc={aeroWheelchair}
           price="900"
           rating={4.8}
           tags={'Sports, lightweight, Folding, Bestseller'}
         />
+        </Link>
         <ShopCard
           name={'Cyber Wheelchair'}
           imgSrc={cyberChair}
@@ -264,7 +266,7 @@ function PetWheelChairContainer() {
             tags={'Cat Wheelchair'}
           />
           <ShopCard
-            name={'Billy Hot Wheelchair'}
+            name={'Billy Hot Wheels'}
             imgSrc={billyHotChair}
             price="60"
             rating={4.8}
@@ -278,7 +280,7 @@ function PetWheelChairContainer() {
             tags={'Dog Wheelchair, Adjustable'}
           />
           <ShopCard
-            name={'Ultra Light Wheelchair'}
+            name={'Guinea Wheels'}
             imgSrc={guineaWheels}
             price="20"
             rating={4.6}
