@@ -28,7 +28,7 @@ function IconContainer() {
     <div className='ml-[114px] mr-[127px] flex gap-4 items-center '>
     
     <Link  to={'/home'}>
-      <img src={navbarIcon} alt="navBarIcon" className="" />
+      <img  src={navbarIcon} alt="navBarIcon" className="" />
     </Link>  
     <Link to={'/home'}>
       <p className="font-Roboto font-bold text-2xl">Wheel Care</p>
@@ -56,7 +56,9 @@ function NavLinks() {
             }}
             className="flex font-medium text-[16px] font-Roboto gap-[3px]"
           >
-            <p>Shop</p>
+            <Link to={'/shop'}>
+            <p onClick={() => setHoveredButton('')} className='hover:text-[#1660CF]'>Shop</p>
+            </Link>
             <img
               className="transition transform ease-out duration-150"
               src={navDropDown}
@@ -339,7 +341,8 @@ function DropDownColumnsData({ hoveredButton, headerIndex, refElement }) {
 
 function DropDownColumnsLinks({ title }) {
   return (
-    <div className="flex cursor-pointer columnContent relative gap-[2px] items-center max-w-fit">
+    <div className="flex cursor-pointer columnContent relative gap-[2px]
+     items-center max-w-fit">
       <p className="font-Roboto font-medium text-[14px]">{title}</p>
     </div>
   );

@@ -53,6 +53,12 @@ export default function ListedFeature() {
       duration:8,
     })
 
+    return () => {
+    // Kill the timeline and ScrollTrigger on cleanup
+    timeline.kill();
+    if (ScrollTrigger.getById(timeline.vars.scrollTrigger.id)) {
+      ScrollTrigger.getById(timeline.vars.scrollTrigger.id).kill();
+    }}
   }, []);
   return (
     <section

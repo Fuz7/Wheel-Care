@@ -29,6 +29,10 @@ export default function BestSeller() {
       { opacity: 0.0 },
       { opacity: 1, duration: 1, ease: 'back.out(1.7)' },
     );
+    return () => {
+      tl.kill(); 
+      ScrollTrigger.killAll(); 
+    };
   }, []);
 
   return (

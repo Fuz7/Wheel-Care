@@ -35,20 +35,26 @@ export default function Reviews() {
       },
     });
 
-    reviewsRef.current.forEach((ref, ) => {
+    reviewsRef.current.forEach((ref) => {
       if (ref) {
         timeline.fromTo(
           ref,
           { opacity: 0, y: 200 },
-          { opacity: 1, y:0, duration: 2, stagger:4, ease:'back.out(1.7)' },
+          { opacity: 1, y: 0, duration: 2, stagger: 4, ease: 'back.out(1.7)' },
         );
       }
     });
-    
-    timeline.to(reviewsRef.current[0],{
-      duration:4,
-    })
 
+    timeline.to(reviewsRef.current[0], {
+      duration: 4,
+    });
+
+    return () => {
+      timeline.kill();
+      if (ScrollTrigger.getById(timeline.vars.scrollTrigger.id)) {
+        ScrollTrigger.getById(timeline.vars.scrollTrigger.id).kill();
+      }
+    };
   }, []);
 
   return (
