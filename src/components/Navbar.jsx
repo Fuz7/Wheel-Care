@@ -11,8 +11,10 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <>
-      <nav className="border-b-[1px] sticky top-0
-       bg-white border-[#414141] border-solid items-center z-10">
+      <nav
+        className="border-b-[1px] sticky top-0
+       bg-white border-[#414141] border-solid items-center z-10"
+      >
         <div className="min-h-[70px] flex items-center mx-auto max-w-[1440px]">
           <IconContainer></IconContainer>
           <NavLinks></NavLinks>
@@ -25,16 +27,14 @@ export default function Navbar() {
 
 function IconContainer() {
   return (
-    <div className='ml-[114px] mr-[127px] flex gap-4 items-center '>
-    
-    <Link  to={'/home'}>
-      <img  src={navbarIcon} alt="navBarIcon" className="" />
-    </Link>  
-    <Link to={'/home'}>
-      <p className="font-Roboto font-bold text-2xl">Wheel Care</p>
-    </Link>
+    <div className="ml-[114px] mr-[127px] flex gap-4 items-center ">
+      <Link to={'/home'}>
+        <img src={navbarIcon} alt="navBarIcon" className="" />
+      </Link>
+      <Link to={'/home'}>
+        <p className="font-Roboto font-bold text-2xl">Wheel Care</p>
+      </Link>
     </div>
-
   );
 }
 
@@ -57,7 +57,12 @@ function NavLinks() {
             className="flex font-medium text-[16px] font-Roboto gap-[3px]"
           >
             <Link to={'/shop'}>
-            <p onClick={() => setHoveredButton('')} className='hover:text-[#1660CF]'>Shop</p>
+              <p
+                onClick={() => setHoveredButton('')}
+                className="hover:text-[#1660CF]"
+              >
+                Shop
+              </p>
             </Link>
             <img
               className="transition transform ease-out duration-150"
@@ -122,9 +127,9 @@ function NavIconLinks() {
         <img src={cartIcon} alt="Cart Icon" />
       </li>
       <Link to={'/login'}>
-      <li className="cursor-pointer">
-        <img src={accountIcon} alt="Account Icon" />
-      </li>
+        <li className="cursor-pointer">
+          <img src={accountIcon} alt="Account Icon" />
+        </li>
       </Link>
     </ul>
   );
@@ -157,6 +162,7 @@ function DropDownContainer({
               setHeaderIndex={setHeaderIndex}
               headerIndex={0}
               refElement={headerRef}
+              setHoveredButton={setHoveredButton}
               originalHeaderIndex={headerIndex}
             />
             <DropDownHeaderLinks
@@ -165,6 +171,7 @@ function DropDownContainer({
               setHeaderIndex={setHeaderIndex}
               headerIndex={1}
               refElement={headerRef}
+              setHoveredButton={setHoveredButton}
               originalHeaderIndex={headerIndex}
             />
             <DropDownHeaderLinks
@@ -173,6 +180,7 @@ function DropDownContainer({
               setHeaderIndex={setHeaderIndex}
               headerIndex={2}
               refElement={headerRef}
+              setHoveredButton={setHoveredButton}
               originalHeaderIndex={headerIndex}
             />
           </>
@@ -185,6 +193,7 @@ function DropDownContainer({
               setHeaderIndex={setHeaderIndex}
               headerIndex={0}
               refElement={headerRef}
+              setHoveredButton={setHoveredButton}
               originalHeaderIndex={headerIndex}
             />
             <DropDownHeaderLinks
@@ -193,6 +202,7 @@ function DropDownContainer({
               setHeaderIndex={setHeaderIndex}
               headerIndex={1}
               refElement={headerRef}
+              setHoveredButton={setHoveredButton}
               originalHeaderIndex={headerIndex}
             />
           </>
@@ -203,6 +213,7 @@ function DropDownContainer({
         <DropDownColumnsData
           refElement={headerRef}
           hoveredButton={hoveredButton}
+          setHoveredButton={setHoveredButton}
           headerIndex={headerIndex}
         ></DropDownColumnsData>
       </div>
@@ -216,7 +227,7 @@ function animateColumnData(
   headerIndex,
   originalHeaderIndex,
 ) {
-  if(originalHeaderIndex !== headerIndex){
+  if (originalHeaderIndex !== headerIndex) {
     gsap.to(refElement.current, {
       duration: 0.2,
       opacity: 0,
@@ -231,7 +242,12 @@ function animateColumnData(
   }
 }
 
-function DropDownColumnsData({ hoveredButton, headerIndex, refElement }) {
+function DropDownColumnsData({
+  hoveredButton,
+  headerIndex,
+  refElement,
+  setHoveredButton,
+}) {
   return (
     <div
       ref={refElement}
@@ -240,100 +256,282 @@ function DropDownColumnsData({ hoveredButton, headerIndex, refElement }) {
       {hoveredButton === 'Shop' && headerIndex === 0 ? (
         <>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Powered Wheelchair" />
-            <DropDownColumnsLinks title="Titanium Wheelchair" />
-            <DropDownColumnsLinks title="Quad Rugby Wheelchair" />
-            <DropDownColumnsLinks title="Lightweight Folding Wheelchair" />
-            <DropDownColumnsLinks title="All Terrain Wheelchair" />
-            <DropDownColumnsLinks title="Racing Wheelchair" />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Powered Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Titanium Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Quad Rugby Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Lightweight Folding Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="All Terrain Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Racing Wheelchair"
+            />
           </div>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Basketball Wheelchair" />
-            <DropDownColumnsLinks title="Tennis Wheelchair" />
-            <DropDownColumnsLinks title="Ultra lightweight folding Wheelchair" />
-            <DropDownColumnsLinks title="Standard Everyday Wheelchair" />
-            <DropDownColumnsLinks title="Youth Wheelchair" />
-            <DropDownColumnsLinks title="Gaming Wheelchair" />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Basketball Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Tennis Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Ultra lightweight folding Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Standard Everyday Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Youth Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Gaming Wheelchair"
+            />
           </div>
         </>
       ) : null}
       {hoveredButton === 'Shop' && headerIndex === 1 ? (
         <>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Cat Wheelchair" />
-            <DropDownColumnsLinks title="Dog Wheelchair" />
-            <DropDownColumnsLinks title="Hamster Wheelchair" />
-            <DropDownColumnsLinks title="Duck Wheelchair" />
-            <DropDownColumnsLinks title="Chicken Wheelchair" />
-            <DropDownColumnsLinks title="Gorilla Wheelchair" />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Cat Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Dog Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Hamster Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Duck Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Chicken Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Gorilla Wheelchair"
+            />
           </div>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Monkey Wheelchair" />
-            <DropDownColumnsLinks title="Horse Wheelchair" />
-            <DropDownColumnsLinks title="Cow Wheelchair" />
-            <DropDownColumnsLinks title="Bird Wheelchair" />
-            <DropDownColumnsLinks title="Pig Wheelchair" />
-            <DropDownColumnsLinks title="Chinese Wheelchair" />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Monkey Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Horse Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Cow Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Bird Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Pig Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Chinese Wheelchair"
+            />
           </div>
         </>
       ) : null}
       {hoveredButton === 'Shop' && headerIndex === 2 ? (
         <>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Wheelchair Tire Accesories" />
-            <DropDownColumnsLinks title="Wheelchair Bags " />
-            <DropDownColumnsLinks title="Wheelchair Pouches" />
-            <DropDownColumnsLinks title="Wheelchair Straps" />
-            <DropDownColumnsLinks title="Wheelchair Brakes" />
-            <DropDownColumnsLinks title="Wheelchair Carriers" />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Tire Accesories"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Bags "
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Pouches"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Straps"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Brakes"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Carriers"
+            />
           </div>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Wheelchair Tire Pumps" />
-            <DropDownColumnsLinks title="Wheelchair Tire Inflators" />
-            <DropDownColumnsLinks title="Wheelchair Tire Adapters" />
-            <DropDownColumnsLinks title="Wheelchair Side Guards" />
-            <DropDownColumnsLinks title="Wheelchair Upholstery" />
-            <DropDownColumnsLinks title="Disability Vehicle Hand Controls" />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Tire Pumps"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Tire Inflators"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Tire Adapters"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Side Guards"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Wheelchair Upholstery"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Disability Vehicle Hand Controls"
+            />
           </div>
         </>
       ) : null}
       {hoveredButton === 'Customize' && headerIndex === 0 ? (
         <>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Powered Wheelchair" />
-            <DropDownColumnsLinks title="Titanium Wheelchair" />
-            <DropDownColumnsLinks title="Quad Rugby Wheelchair" />
-            <DropDownColumnsLinks title="Lightweight Folding Wheelchair" />
-            <DropDownColumnsLinks title="All Terrain Wheelchair" />
-            <DropDownColumnsLinks title="Racing Wheelchair" />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Powered Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Titanium Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Quad Rugby Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Lightweight Folding Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="All Terrain Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Racing Wheelchair"
+            />
           </div>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Basketball Wheelchair" />
-            <DropDownColumnsLinks title="Tennis Wheelchair" />
-            <DropDownColumnsLinks title="Ultra lightweight folding Wheelchair" />
-            <DropDownColumnsLinks title="Standard Everyday Wheelchair" />
-            <DropDownColumnsLinks title="Youth Wheelchair" />
-            <DropDownColumnsLinks title="Gaming Wheelchair" />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Basketball Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Tennis Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Ultra lightweight folding Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Standard Everyday Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Youth Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Gaming Wheelchair"
+            />
           </div>
         </>
       ) : null}
       {hoveredButton === 'Customize' && headerIndex === 1 ? (
         <>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Cat Wheelchair" />
-            <DropDownColumnsLinks title="Dog Wheelchair" />
-            <DropDownColumnsLinks title="Hamster Wheelchair" />
-            <DropDownColumnsLinks title="Duck Wheelchair" />
-            <DropDownColumnsLinks title="Chicken Wheelchair" />
-            <DropDownColumnsLinks title="Gorilla Wheelchair" />
+            <Link to={'/customize/customizeCat'}>
+              <DropDownColumnsLinks
+                setHoveredButton={setHoveredButton}
+                title="Cat Wheelchair"
+              />
+            </Link>
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Dog Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Hamster Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Duck Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Chicken Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Gorilla Wheelchair"
+            />
           </div>
           <div className="flex flex-col gap-[25px] min-w-[225px]">
-            <DropDownColumnsLinks title="Monkey Wheelchair" />
-            <DropDownColumnsLinks title="Horse Wheelchair" />
-            <DropDownColumnsLinks title="Cow Wheelchair" />
-            <DropDownColumnsLinks title="Bird Wheelchair" />
-            <DropDownColumnsLinks title="Pig Wheelchair" />
-            <DropDownColumnsLinks title="Chinese Wheelchair" />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Monkey Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Horse Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Cow Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Bird Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Pig Wheelchair"
+            />
+            <DropDownColumnsLinks
+              setHoveredButton={setHoveredButton}
+              title="Chinese Wheelchair"
+            />
           </div>
         </>
       ) : null}
@@ -341,10 +539,13 @@ function DropDownColumnsData({ hoveredButton, headerIndex, refElement }) {
   );
 }
 
-function DropDownColumnsLinks({ title }) {
+function DropDownColumnsLinks({ title,setHoveredButton }) {
   return (
-    <div className="flex cursor-pointer columnContent relative gap-[2px]
-     items-center max-w-fit">
+    <div
+      className="flex cursor-pointer columnContent relative gap-[2px]
+     items-center max-w-fit"
+      onClick={()=>setHoveredButton(null)}
+    >
       <p className="font-Roboto font-medium text-[14px]">{title}</p>
     </div>
   );
@@ -356,6 +557,7 @@ function DropDownHeaderLinks({
   setHeaderIndex,
   headerIndex,
   refElement,
+  setHoveredButton,
   originalHeaderIndex,
 }) {
   return (
@@ -365,8 +567,14 @@ function DropDownHeaderLinks({
       pl-[19px] pt-[9px] pr-[26px] flex flex-col gap-[4px]
       columnContent"
       onMouseEnter={() =>
-        animateColumnData(refElement, setHeaderIndex, headerIndex,originalHeaderIndex)
+        animateColumnData(
+          refElement,
+          setHeaderIndex,
+          headerIndex,
+          originalHeaderIndex,
+        )
       }
+      onClick={() => setHoveredButton(null)}
     >
       <p className="relative max-w-fit font-Roboto font-semibold">{title}</p>
       <p className="font-Poppins text-[12px] text-[#616161] ">{description}</p>

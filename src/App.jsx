@@ -1,4 +1,5 @@
 import Login from './components/Account/Login';
+import CustomizeCat from './components/Customize/CustomizeCat';
 import Home from './components/Home/Home';
 import Layout from './components/Layout';
 import ProductSelected from './components/Shop/ProductSelected';
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
       { path: '/home', element: <Home /> },
       { path:'/shop', element: <Shop /> },
       {path:'/shop/productSelected', element: <ProductSelected /> },
-      {path:'/login', element: <Login /> }
+      {path:'/login', element: <Login /> },
+      {path:'/customize/customizeCat',element: <CustomizeCat /> }
     ],
   },
 ]);

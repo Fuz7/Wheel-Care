@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 function Layout() {
   return (
-    <div className="min-h-lvh bg-[#fcfcfc] flex flex-col">
+    <div className="min-h-lvh relative bg-[#fcfcfc] flex flex-col">
       {/* Always show Navbar */}
       <Navbar />
       
