@@ -46,7 +46,7 @@ export default function BestSeller() {
       <div ref={cardContainerRef} className="flex gap-[75px] self-center">
         <Cards
           imgSrc={bestSellerCart}
-          title="Cart Wheelchair"
+          title="Cyber Wheelchair"
           rating={4.8}
           price="120"
           review='134'

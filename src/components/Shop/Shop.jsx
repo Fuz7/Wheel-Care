@@ -155,7 +155,7 @@ function ShopCard({ name, imgSrc, price, rating, tags }) {
       <p className="mt-auto mb-[5px] font-Roboto  text-[20px]">${price}</p>
       <span
         className="absolute bottom-0 left-0 min-w-[240px]
-        min-h-[150px] bg-[#000000b2] flex flex-col px-[15px] pt-4 pb-3
+        min-h-[150px] bg-[#000000b2] rounded-t-[2px] flex flex-col px-[15px] pt-4 pb-3
         items-center transition-transform translate-y-[150px]
         "
       >

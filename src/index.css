@@ -55,3 +55,6 @@ body{
   transform: translateY(0px);
 }
 
+.loginGradient{
+  background-image: linear-gradient(135deg, rgba(17,0,30,1) 0%, rgba(49,10,103,1) 58%, rgba(106,9,166,1) 86%);
+}

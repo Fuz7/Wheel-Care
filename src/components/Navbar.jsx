@@ -121,9 +121,11 @@ function NavIconLinks() {
       <li className="cursor-pointer">
         <img src={cartIcon} alt="Cart Icon" />
       </li>
+      <Link to={'/login'}>
       <li className="cursor-pointer">
         <img src={accountIcon} alt="Account Icon" />
       </li>
+      </Link>
     </ul>
   );
 }
