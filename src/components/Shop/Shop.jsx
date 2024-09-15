@@ -42,7 +42,8 @@ function WheelChairContainer() {
           <div
             className="flex justify-center items-center text-[20px]
             min-w-[41px] min-h-[36px] max-h-[36px] rounded-[10px] border
-             border-black font-Roboto font-light cursor-pointer"
+             border-black font-Roboto font-light cursor-pointer
+             bg-black text-white"
           >
             1
           </div>
@@ -210,7 +211,8 @@ function PetWheelChairContainer() {
             <div
               className="flex justify-center items-center text-[20px]
             min-w-[41px] min-h-[36px] max-h-[36px] rounded-[10px] border
-             border-black font-Roboto font-light cursor-pointer"
+             border-black font-Roboto font-light cursor-pointer
+             bg-black text-white"
             >
               1
             </div>
