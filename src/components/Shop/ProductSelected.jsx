@@ -10,9 +10,28 @@ import Rating from '@mui/material/Rating';
 import dropdown from '@images/navDropDown.png';
 import lightweightTag from '@images/lightweightTag.png';
 import bestSellerTag from '@images/bestSellerTag.png';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import gsap from 'gsap';
+
+function animateSelectedImage(imgSrc, containerRef, setSelectedImage) {
+  gsap.to(containerRef.current, {
+    duration: 0.2,
+    opacity: 0,
+    onComplete: () => {
+      setSelectedImage(imgSrc);
+      gsap.to(containerRef.current, {
+        duration: 0.2,
+        opacity: 1,
+      });
+    },
+  });
+}
+
 export default function ItemSelected() {
+
   const [quantity, setQuantity] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(bigPurpleAeroChair);
+  const containerRef = useRef(null);
   return (
     <section
       className="min-h-[850px] min-w-[1440px]
@@ -22,26 +41,42 @@ export default function ItemSelected() {
       <div className="flex gap-[20px]">
         <div className="flex flex-col gap-[20px]">
           <img
-            className="min-w-[64px] min-h-[64px]"
+            className="min-w-[64px] min-h-[64px] cursor-pointer"
             src={smallPurpleAeroChair}
             alt="Small Image"
+            onClick={() =>
+              selectedImage !== bigPurpleAeroChair
+                ? animateSelectedImage(bigPurpleAeroChair,containerRef,setSelectedImage)
+                : null
+            }
           />
           <img
-            className="min-w-[64px] min-h-[64px]"
+            className="min-w-[64px] min-h-[64px] cursor-pointer"
             src={smallBlueAeroChair}
             alt="Small Image"
+            onClick={() =>
+              selectedImage !== bigBlueAeroChair
+                ? animateSelectedImage(bigBlueAeroChair,containerRef,setSelectedImage)
+                : null
+            }
           />
           <img
-            className="min-w-[64px] min-h-[64px]"
+            className="min-w-[64px] min-h-[64px] cursor-pointer"
             src={smallRedAeroChair}
             alt="Small Image"
+            onClick={() =>
+              selectedImage !== bigRedAeroChair
+                ? animateSelectedImage(bigRedAeroChair,containerRef,setSelectedImage)
+                : null
+            }
           />
         </div>
         <div className="flex flex-col">
           <img
             className="min-w-[444px] min-h[444px] 
           max-w-[444px] max-h-[444px]"
-            src={bigPurpleAeroChair}
+            ref={containerRef}
+            src={selectedImage}
             alt=""
           />
           <div className="flex gap-[11px] mt-[20px] ml-[60px] items-center">
@@ -49,14 +84,18 @@ export default function ItemSelected() {
             <img
               className="cursor-pointer"
               src={minusButton}
-              onClick={()=> setQuantity((quantity) =>quantity > 0?quantity - 1:quantity)}
+              onClick={() =>
+                setQuantity((quantity) =>
+                  quantity > 0 ? quantity - 1 : quantity,
+                )
+              }
               alt="Minus Button"
             />
             <p className="font-Roboto text-[20px]">{quantity}</p>
             <img
               className="cursor-pointer"
               src={plusButton}
-              onClick={()=> setQuantity((quantity) =>quantity + 1)}
+              onClick={() => setQuantity((quantity) => quantity + 1)}
               alt="Plus Button"
             />
           </div>
@@ -77,7 +116,7 @@ export default function ItemSelected() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col max-h-[850px] mb-[50px] pb-[100px] overflow-auto">
+        <div className="flex flex-col max-h-[850px] ml-[40px] mb-[50px] pb-[100px] overflow-auto">
           <ProductHeader />
           <div className="min-w-full min-h-[1px] bg-black"></div>
           <ProductDetails />
