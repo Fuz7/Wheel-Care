@@ -10,6 +10,8 @@ import Rating from '@mui/material/Rating';
 import dropdown from '@images/navDropDown.png';
 import lightweightTag from '@images/lightweightTag.png';
 import bestSellerTag from '@images/bestSellerTag.png';
+import addToCart from '@images/addToCart.png';
+import buyNow from '@images/buyNow.png';
 import { useRef, useState } from 'react';
 import gsap from 'gsap';
 
@@ -28,7 +30,6 @@ function animateSelectedImage(imgSrc, containerRef, setSelectedImage) {
 }
 
 export default function ItemSelected() {
-
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(bigPurpleAeroChair);
   const containerRef = useRef(null);
@@ -46,7 +47,11 @@ export default function ItemSelected() {
             alt="Small Image"
             onClick={() =>
               selectedImage !== bigPurpleAeroChair
-                ? animateSelectedImage(bigPurpleAeroChair,containerRef,setSelectedImage)
+                ? animateSelectedImage(
+                    bigPurpleAeroChair,
+                    containerRef,
+                    setSelectedImage,
+                  )
                 : null
             }
           />
@@ -56,7 +61,11 @@ export default function ItemSelected() {
             alt="Small Image"
             onClick={() =>
               selectedImage !== bigBlueAeroChair
-                ? animateSelectedImage(bigBlueAeroChair,containerRef,setSelectedImage)
+                ? animateSelectedImage(
+                    bigBlueAeroChair,
+                    containerRef,
+                    setSelectedImage,
+                  )
                 : null
             }
           />
@@ -66,7 +75,11 @@ export default function ItemSelected() {
             alt="Small Image"
             onClick={() =>
               selectedImage !== bigRedAeroChair
-                ? animateSelectedImage(bigRedAeroChair,containerRef,setSelectedImage)
+                ? animateSelectedImage(
+                    bigRedAeroChair,
+                    containerRef,
+                    setSelectedImage,
+                  )
                 : null
             }
           />
@@ -100,20 +113,21 @@ export default function ItemSelected() {
             />
           </div>
           <div className="flex gap-6 mt-[18px] ml-[60px]">
-            <div
-              className="min-w-[200px] min-h-[50px] border
-            border-black rounded-[2px] flex items-center cursor-pointer
-            justify-center font-Roboto font-semibold text-2xl"
-            >
-              ADD TO CART
-            </div>
-            <div
-              className="min-w-[200px] min-h-[50px] border
-            border-black rounded-[2px] flex items-center cursor-pointer
-            justify-center font-Roboto font-semibold text-2xl"
-            >
-              BUY NOW
-            </div>
+            <img
+              src={addToCart}
+              alt="Add To Cart"
+              className="min-w-[210px] min-h-[50px] 
+           flex items-center cursor-pointer
+           "
+            />
+
+            <img
+              src={buyNow}
+              alt='Buy Now'
+              className="min-w-[210px] min-h-[50px] 
+           flex items-center border cursor-pointer
+           "
+            />
           </div>
         </div>
         <div className="flex flex-col max-h-[850px] ml-[40px] mb-[50px] pb-[100px] overflow-auto">
