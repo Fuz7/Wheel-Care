@@ -10,7 +10,9 @@ import Rating from '@mui/material/Rating';
 import dropdown from '@images/navDropDown.png';
 import lightweightTag from '@images/lightweightTag.png';
 import bestSellerTag from '@images/bestSellerTag.png';
+import { useState } from 'react';
 export default function ItemSelected() {
+  const [quantity, setQuantity] = useState(1);
   return (
     <section
       className="min-h-[850px] min-w-[1440px]
@@ -19,9 +21,21 @@ export default function ItemSelected() {
     >
       <div className="flex gap-[20px]">
         <div className="flex flex-col gap-[20px]">
-          <img className='min-w-[64px] min-h-[64px]' src={smallPurpleAeroChair} alt="Small Image" />
-          <img className='min-w-[64px] min-h-[64px]' src={smallBlueAeroChair} alt="Small Image" />
-          <img className='min-w-[64px] min-h-[64px]' src={smallRedAeroChair} alt="Small Image" />
+          <img
+            className="min-w-[64px] min-h-[64px]"
+            src={smallPurpleAeroChair}
+            alt="Small Image"
+          />
+          <img
+            className="min-w-[64px] min-h-[64px]"
+            src={smallBlueAeroChair}
+            alt="Small Image"
+          />
+          <img
+            className="min-w-[64px] min-h-[64px]"
+            src={smallRedAeroChair}
+            alt="Small Image"
+          />
         </div>
         <div className="flex flex-col">
           <img
@@ -32,9 +46,19 @@ export default function ItemSelected() {
           />
           <div className="flex gap-[11px] mt-[20px] ml-[60px] items-center">
             <p className="font-Roboto font-light text-[20px]">Quantity</p>
-            <img src={minusButton} alt="Minus Button" />
-            <p className="font-Roboto text-[20px]">1</p>
-            <img src={plusButton} alt="" />
+            <img
+              className="cursor-pointer"
+              src={minusButton}
+              onClick={()=> setQuantity((quantity) =>quantity > 0?quantity - 1:quantity)}
+              alt="Minus Button"
+            />
+            <p className="font-Roboto text-[20px]">{quantity}</p>
+            <img
+              className="cursor-pointer"
+              src={plusButton}
+              onClick={()=> setQuantity((quantity) =>quantity + 1)}
+              alt="Plus Button"
+            />
           </div>
           <div className="flex gap-6 mt-[18px] ml-[60px]">
             <div
