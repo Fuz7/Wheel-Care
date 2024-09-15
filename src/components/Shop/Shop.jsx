@@ -2,11 +2,14 @@
 import ultraLight from '@images/ultraLight.png';
 import Rating from '@mui/material/Rating';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
+
 export default function Shop() {
   return (
     <section className="min-h-[1000px] flex flex-col items-center">
-      <div className="flex flex-col mt-[120px]  max-w-[1440px] min-w-[1440px]">
+      <div className="flex flex-col mt-[60px]  max-w-[1440px] min-w-[1440px]">
         <WheelChairContainer />
+        <PetWheelChairContainer />
       </div>
     </section>
   );
@@ -14,7 +17,7 @@ export default function Shop() {
 
 function WheelChairContainer() {
   return (
-    <div className="flex flex-col mb-[16px]">
+    <div className="flex flex-col mb-[80px]">
       <div className="flex justify-between">
         <h2 className="font-Roboto font-semibold text-[30px]">Wheelchairs</h2>
         <div className="flex items-center gap-[4px]">
@@ -104,7 +107,7 @@ function WheelChairContainer() {
 }
 
 function ShopCard({ name, imgSrc, price, rating, tags }) {
-    const elementRef = useRef(null);
+  const elementRef = useRef(null);
 
   const handleMouseEnter = () => {
     if (elementRef.current) {
@@ -161,11 +164,115 @@ function ShopCard({ name, imgSrc, price, rating, tags }) {
               },
             }}
           />
-          <p className='font-Roboto text-[14px] text-white'>{rating}</p>
+          <p className="font-Roboto text-[14px] text-white">{rating}</p>
         </div>
-        <p className='text-white mt-auto font-light 
-        text-[14px]  '>Tags: {tags}</p>
+        <p
+          className="text-white mt-auto font-light 
+        text-[14px]  "
+        >
+          Tags: {tags}
+        </p>
       </span>
+    </div>
+  );
+}
+
+function PetWheelChairContainer() {
+  return (
+    <div
+      className="mt-90px max-w-[1440px] min-w-[1440px] flex
+        flex-col"
+    >
+      <div className="flex flex-col">
+        <div className="flex justify-between">
+          <h2 className="font-Roboto font-semibold text-[30px]">
+            Pet Wheelchairs
+          </h2>
+          <div className="flex items-center gap-[4px]">
+            <div
+              className="flex justify-center items-center text-[20px]
+            min-w-[41px] min-h-[36px] max-h-[36px] rounded-[10px] border
+             border-black font-Roboto font-light cursor-pointer px-[9px]"
+            >
+              Prev
+            </div>
+            <div
+              className="flex justify-center items-center text-[20px]
+            min-w-[41px] min-h-[36px] max-h-[36px] rounded-[10px] border
+             border-black font-Roboto font-light cursor-pointer"
+            >
+              1
+            </div>
+            <div
+              className="flex justify-center items-center text-[20px]
+            min-w-[41px] min-h-[36px] max-h-[36px] rounded-[10px] border
+             border-black font-Roboto font-light cursor-pointer"
+            >
+              2
+            </div>
+            <div
+              className="flex justify-center items-center text-[20px]
+            min-w-[41px] min-h-[36px] max-h-[36px] rounded-[10px] border
+             border-black font-Roboto font-light cursor-pointer "
+            >
+              3
+            </div>
+            <div
+              className="flex justify-center items-center text-[20px]
+            min-w-[41px] min-h-[36px] max-h-[36px] rounded-[10px] border
+             border-black font-Roboto font-light cursor-pointer px-[9px]"
+            >
+              Next
+            </div>
+          </div>
+        </div>
+        <div className="flex gap mt-[25px]">
+          <Link to={'/'}>
+            <ShopCard
+              name={'Ultra Light Wheelchair'}
+              imgSrc={ultraLight}
+              price="90"
+              rating={4.6}
+              tags={'Sports, Ultra lightweight, Folding'}
+            />
+          </Link>
+          <ShopCard
+            name={'Ultra Light Wheelchair'}
+            imgSrc={ultraLight}
+            price="90"
+            rating={4.6}
+            tags={'Sports, Ultra lightweight, Folding'}
+          />
+          <ShopCard
+            name={'Ultra Light Wheelchair'}
+            imgSrc={ultraLight}
+            price="90"
+            rating={4.6}
+            tags={'Sports, Ultra lightweight, Folding'}
+          />
+          <ShopCard
+            name={'Ultra Light Wheelchair'}
+            imgSrc={ultraLight}
+            price="90"
+            rating={4.6}
+            tags={'Sports, Ultra lightweight, Folding'}
+          />
+          <ShopCard
+            name={'Ultra Light Wheelchair'}
+            imgSrc={ultraLight}
+            price="90"
+            rating={4.6}
+            tags={'Sports, Ultra lightweight, Folding'}
+          />
+          <ShopCard
+            name={'Ultra Light Wheelchair'}
+            imgSrc={ultraLight}
+            price="90"
+            rating={4.6}
+            tags={'Sports, Ultra lightweight, Folding'}
+          />
+        </div>
+      </div>
     </div>
   );
 }
