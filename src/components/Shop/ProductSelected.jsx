@@ -113,19 +113,8 @@ export default function ItemSelected() {
             />
           </div>
           <div className="flex gap-6 mt-[18px] ml-[60px]">
-              <div className='min-w-[210px] min-h-[50px] flex
-              items-center text-white font-Roboto font-black
-               bg-[#6228B4] rounded-[2px] text-[24px] cursor-pointer'>
-                <img src={addToCart} className='ml-[20px] mr-[8px] mb-[2px]' ></img>
-                Add To Cart
-              </div>
-              <div className='min-w-[210px] min-h-[50px] flex
-              items-center text-white font-Roboto font-black
-               bg-[#6228B4] rounded-[2px] text-[24px] cursor-pointer'>
-                <img src={buyNow} className='ml-[36px] mr-[8px] mb-[2px]' ></img>
-                Buy Now
-              </div>
-         
+            <AddToCartButton />
+            <BuyNowButton />
           </div>
         </div>
         <div className="flex flex-col max-h-[850px] ml-[40px] mb-[50px] pb-[100px] overflow-auto">
@@ -328,5 +317,31 @@ function ProductDetails() {
         </ul>
       </div>
     </>
+  );
+}
+
+export function BuyNowButton() {
+  return (
+    <div
+      className="min-w-[210px] min-h-[50px] flex
+              items-center text-white font-Roboto font-black
+               bg-[#6228B4] rounded-[2px] text-[24px] cursor-pointer"
+    >
+      <img src={buyNow} className="ml-[36px] mr-[8px] mb-[2px]"></img>
+      Buy Now
+    </div>
+  );
+}
+
+export function AddToCartButton() {
+  return (
+    <div
+      className="min-w-[210px] min-h-[50px] flex
+              items-center text-white font-Roboto font-black
+               bg-[#6228B4] rounded-[2px] text-[24px] cursor-pointer"
+    >
+      <img src={addToCart} className="ml-[20px] mr-[8px] mb-[2px]"></img>
+      Add To Cart
+    </div>
   );
 }
