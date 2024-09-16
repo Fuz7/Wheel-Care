@@ -10,8 +10,8 @@ import Rating from '@mui/material/Rating';
 import dropdown from '@images/navDropDown.png';
 import lightweightTag from '@images/lightweightTag.png';
 import bestSellerTag from '@images/bestSellerTag.png';
-import addToCart from '@images/addToCart.png';
-import buyNow from '@images/buyNow.png';
+import addToCart from '@images/addToCart.svg';
+import buyNow from '@images/buyNow.svg';
 import { useRef, useState } from 'react';
 import gsap from 'gsap';
 
@@ -113,21 +113,19 @@ export default function ItemSelected() {
             />
           </div>
           <div className="flex gap-6 mt-[18px] ml-[60px]">
-            <img
-              src={addToCart}
-              alt="Add To Cart"
-              className="min-w-[210px] min-h-[50px] 
-           flex items-center cursor-pointer
-           "
-            />
-
-            <img
-              src={buyNow}
-              alt='Buy Now'
-              className="min-w-[210px] min-h-[50px] 
-           flex items-center border cursor-pointer
-           "
-            />
+              <div className='min-w-[210px] min-h-[50px] flex
+              items-center text-white font-Roboto font-black
+               bg-[#6228B4] rounded-[2px] text-[24px] cursor-pointer'>
+                <img src={addToCart} className='ml-[20px] mr-[8px] mb-[2px]' ></img>
+                Add To Cart
+              </div>
+              <div className='min-w-[210px] min-h-[50px] flex
+              items-center text-white font-Roboto font-black
+               bg-[#6228B4] rounded-[2px] text-[24px] cursor-pointer'>
+                <img src={buyNow} className='ml-[36px] mr-[8px] mb-[2px]' ></img>
+                Buy Now
+              </div>
+         
           </div>
         </div>
         <div className="flex flex-col max-h-[850px] ml-[40px] mb-[50px] pb-[100px] overflow-auto">
