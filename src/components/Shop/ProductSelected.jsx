@@ -30,7 +30,6 @@ function animateSelectedImage(imgSrc, containerRef, setSelectedImage) {
 }
 
 export default function ItemSelected() {
-  const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(bigPurpleAeroChair);
   const containerRef = useRef(null);
   return (
@@ -94,23 +93,7 @@ export default function ItemSelected() {
           />
           <div className="flex gap-[11px] mt-[20px] ml-[60px] items-center">
             <p className="font-Roboto font-light text-[20px]">Quantity</p>
-            <img
-              className="cursor-pointer"
-              src={minusButton}
-              onClick={() =>
-                setQuantity((quantity) =>
-                  quantity > 0 ? quantity - 1 : quantity,
-                )
-              }
-              alt="Minus Button"
-            />
-            <p className="font-Roboto text-[20px]">{quantity}</p>
-            <img
-              className="cursor-pointer"
-              src={plusButton}
-              onClick={() => setQuantity((quantity) => quantity + 1)}
-              alt="Plus Button"
-            />
+            <SetQuantityButtons />
           </div>
           <div className="flex gap-6 mt-[18px] ml-[60px]">
             <AddToCartButton />
@@ -318,6 +301,33 @@ function ProductDetails() {
       </div>
     </>
   );
+}
+
+export function SetQuantityButtons(){
+  const [quantity, setQuantity] = useState(1);
+  return(
+    <>
+            <img
+              className="cursor-pointer max-h-[32px] max-w-[32px]"
+              
+              src={minusButton}
+              onClick={() =>
+                setQuantity((quantity) =>
+                  quantity > 1 ? quantity - 1 : quantity,
+                )
+              }
+              alt="Minus Button"
+            />
+            <p className="font-Roboto text-[20px]">{quantity}</p>
+            <img
+              className="cursor-pointer max-w-[32px] max-h-[32px]"
+              
+              src={plusButton}
+              onClick={() => setQuantity((quantity) => quantity + 1)}
+              alt="Plus Button"
+            />
+    </>
+  )
 }
 
 export function BuyNowButton() {
