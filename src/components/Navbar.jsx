@@ -98,6 +98,7 @@ function NavLinks() {
             />
           </div>
         </li>
+        <Link to={'/testimonial'}>
         <li
           onMouseEnter={() => setHoveredButton(null)}
           className="flex font-Roboto gap-[3px] font-medium 
@@ -106,6 +107,7 @@ function NavLinks() {
         >
           Testimonial
         </li>
+        </Link>
         <li
           onMouseEnter={() => setHoveredButton(null)}
           className="flex font-Roboto gap-[3px] font-medium text-[16px] cursor-pointer"

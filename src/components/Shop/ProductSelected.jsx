@@ -12,7 +12,7 @@ import lightweightTag from '@images/lightweightTag.png';
 import bestSellerTag from '@images/bestSellerTag.png';
 import addToCart from '@images/addToCart.svg';
 import buyNow from '@images/buyNow.svg';
-import { useRef, useState } from 'react';
+import { useRef, useState,useEffect } from 'react';
 import gsap from 'gsap';
 
 function animateSelectedImage(imgSrc, containerRef, setSelectedImage) {
@@ -32,6 +32,9 @@ function animateSelectedImage(imgSrc, containerRef, setSelectedImage) {
 export default function ItemSelected() {
   const [selectedImage, setSelectedImage] = useState(bigPurpleAeroChair);
   const containerRef = useRef(null);
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
     <section
       className="min-h-[850px] min-w-[1440px]

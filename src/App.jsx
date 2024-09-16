@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import ProductSelected from './components/Shop/ProductSelected';
 import Shop from './components/Shop/Shop';
 import { createBrowserRouter, RouterProvider,Navigate } from 'react-router-dom';
+import Testimonial from './components/Testimonial/Testimonial';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
       { path:'/shop', element: <Shop /> },
       {path:'/shop/productSelected', element: <ProductSelected /> },
       {path:'/login', element: <Login /> },
-      {path:'/customize/customizeCat',element: <CustomizeCat /> }
+      {path:'/customize/customizeCat',element: <CustomizeCat /> },
+      {path:'/testimonial',element: <Testimonial /> }
     ],
   },
 ]);

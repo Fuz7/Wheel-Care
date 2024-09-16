@@ -3,10 +3,14 @@ import Reviews from './Reviews';
 import BestSeller from './BestSeller';
 import FAQ from './FAQ';
 import TheTeam from './TheTeam';
+import { useEffect } from 'react';
 
 
 
 export default function Home() {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
     <div className="min-h-[3000px] bg-[#FCFCFC]">
       <div className="flex gap-[90px] mt-[180px]">

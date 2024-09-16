@@ -1,6 +1,10 @@
 import loginLogo from '@images/loginLogo.png';
-
+import { useEffect } from 'react';
 export default function Login() {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+
   return (
     <section
       className="min-h-[850px] min-w-[1440px]

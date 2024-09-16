@@ -11,7 +11,7 @@ import whiteCheck from '@images/whiteCheck.svg';
 import closeButton from '@images/closeButton.svg';
 import catMeasurement from '@images/catMeasurement.svg';
 import { AddToCartButton, BuyNowButton } from '../Shop/ProductSelected';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { SetQuantityButtons } from '../Shop/ProductSelected';
 import gsap from 'gsap';
 
@@ -30,6 +30,9 @@ function animateSelectedImage(imgSrc, containerRef, setSelectedImage) {
 }
 
 export default function CustomizeCat() {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   const [showPopup, setShowPopup] = useState(false);
   return (
     <>

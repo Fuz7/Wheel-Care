@@ -12,7 +12,7 @@ import happyWheels from '@images/happyWheels.png'
 import billyHotChair from '@images/billyHotChair.png'
 import adjustableWheelchair from '@images/adjustableWheelchair.png'
 import guineaWheels from '@images/guineaWheels.png'
-import { useRef } from 'react';
+import { useRef,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Shop() {
@@ -27,6 +27,9 @@ export default function Shop() {
 }
 
 function WheelChairContainer() {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
     <div className="flex flex-col mb-[80px]">
       <div className="flex justify-between">
