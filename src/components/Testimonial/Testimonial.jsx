@@ -204,7 +204,8 @@ function TestimonialCard({
     <div
       className="inline-block min-w-[370px] max-w-[350px]
   border border-black shadow-[16px_16px_4px_rgba(0,0,0,0.25)]
-  mr-2 mb-2 align-top rounded-[5px]
+  mr-2 mb-2 align-top rounded-[5px] transition-transform
+  hover:translate-y-[-5px]
   "
     >
       <div className="flex flex-col p-[26px]">
