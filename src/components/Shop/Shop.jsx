@@ -34,6 +34,7 @@ function WheelChairContainer() {
     <div className="flex flex-col mb-[80px]">
       <div className="flex justify-between">
         <h2 className="font-Roboto font-semibold text-[30px]">Wheelchairs</h2>
+        
         <div className="flex items-center gap-[4px]">
           <div
             className="flex justify-center items-center text-[20px]
