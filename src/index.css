@@ -70,3 +70,12 @@ body {
     rgba(72, 21, 208, 1) 100%
   );
 }
+
+.reviewGradient {
+  background-image: linear-gradient(
+    45deg,
+    rgba(213, 132, 245, 1) 5%,
+    rgba(155, 154, 245, 1) 44%,
+    rgba(211, 118, 237, 1) 100%
+  );
+}

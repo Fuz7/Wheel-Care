@@ -62,7 +62,7 @@ export default function Reviews() {
       <h2 className="self-center font-Poppins-Medium text-[48px]">Reviews</h2>
       <div
         ref={containerRef}
-        className="min-w-full min-h-[700px] bg-[rgb(195,179,242)] pt-[67px]
+        className="min-w-full min-h-[700px] reviewGradient pt-[67px]
       flex justify-center gap-[150px]"
       >
         <ReviewCard
