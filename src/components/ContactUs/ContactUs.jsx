@@ -16,23 +16,23 @@ export default function ContactUs() {
           <div
             className="min-w-[402px] max-w-[402px] min-h-[570px]
           border-solid border-[4px] border-[#6228B4] rounded-[90px]
-           flex flex-col pt-[40px] items-center px-[25px]"
+           flex flex-col pt-[40px] items-center px-[25px] contactGradient" 
           >
             <div
               className="min-w-[120px] max-w-[120px] min-h-[120px]
             rounded-full max-h-[120px] flex items-center justify-center
-             bg-[#6228B4] self-center "
+             bg-white self-center "
             >
               <img src={addressLogo} alt="" />
             </div>
             <h3
               className="mt-[10px] font-Poppins-Bold text-[29px]
-           text-[#6228B4]"
+           text-white"
             >
               ADDRESS
             </h3>
             <p
-              className="mt-[36px] text-[#6228B4]
+              className="mt-[36px] text-white
              font-Poppins-SemiBold text-[22px] text-center"
             >
               Matina , PS Building Davao City, Philippines
@@ -41,35 +41,35 @@ export default function ContactUs() {
           <div
             className="min-w-[402px] max-w-[402px] min-h-[570px]
           border-solid border-[4px] border-[#6228B4] rounded-[90px]
-           flex flex-col pt-[40px] items-center px-[25px]"
+           flex flex-col pt-[40px] items-center px-[25px] contactGradient"
           >
             <div
               className="min-w-[120px] max-w-[120px] min-h-[120px]
             rounded-full max-h-[120px] flex items-center justify-center
-             bg-[#6228B4] self-center "
+             bg-white self-center "
             >
               <img src={phoneLogo} alt="" />
             </div>
             <h3
               className="mt-[10px] font-Poppins-Bold text-[29px]
-           text-[#6228B4]"
+           text-white"
             >
               PHONE
             </h3>
             <p
-              className="mt-[36px] text-[#6228B4]
+              className="mt-[36px] text-white
              font-Poppins-SemiBold text-[22px] text-center"
             >
               Main Office
             </p>
             <p
-              className="mt-[12px] text-[#6228B4]
+              className="mt-[12px] text-white
              font-Poppins-SemiBold text-[22px] text-center"
             >
               Tele #: 245-5142
             </p>
             <p
-              className="mt-[12px] text-[#6228B4]
+              className="mt-[12px] text-white
              font-Poppins-SemiBold text-[22px] text-center"
             >
               Mobile #: 09672150952
@@ -78,23 +78,23 @@ export default function ContactUs() {
           <div
             className="min-w-[402px] max-w-[402px] min-h-[570px]
           border-solid border-[4px] border-[#6228B4] rounded-[90px]
-           flex flex-col pt-[40px] items-center px-[25px]"
+           flex flex-col pt-[40px] items-center px-[25px] contactGradient"
           >
             <div
               className="min-w-[120px] max-w-[120px] min-h-[120px]
             rounded-full max-h-[120px] flex items-center justify-center
-             bg-[#6228B4] self-center "
+             bg-white self-center "
             >
               <img src={emailLogo} alt="" />
             </div>
             <h3
               className="mt-[10px] font-Poppins-Bold text-[29px]
-           text-[#6228B4]"
+           text-white"
             >
               EMAIL
             </h3>
             <p
-              className="mt-[36px] text-[#6228B4]
+              className="mt-[36px] text-white
              font-Poppins-SemiBold text-[22px] text-center"
             >
               wheelcare@gmail.com

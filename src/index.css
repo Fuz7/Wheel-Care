@@ -33,7 +33,7 @@
   src: url('@fonts/Inter-variable.ttf');
 }
 
-body{
+body {
   overflow-x: hidden;
 }
 
@@ -41,20 +41,32 @@ body{
   transform: rotate(180deg);
 }
 
-
-
-.columnContent:hover > p:first-child{
-  color: #1660CF;
+.columnContent:hover > p:first-child {
+  color: #1660cf;
 }
 
-.faqDropdown--active > div > img{
+.faqDropdown--active > div > img {
   transform: rotate(180deg);
 }
 
-.shopCardHovered > span{
+.shopCardHovered > span {
   transform: translateY(0px);
 }
 
-.loginGradient{
-  background-image: linear-gradient(135deg, rgba(17,0,30,1) 0%, rgba(49,10,103,1) 58%, rgba(106,9,166,1) 86%);
+.loginGradient {
+  background-image: linear-gradient(
+    135deg,
+    rgba(17, 0, 30, 1) 0%,
+    rgba(49, 10, 103, 1) 58%,
+    rgba(106, 9, 166, 1) 86%
+  );
+}
+
+.contactGradient {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 204, 112, 1) 0%,
+    rgba(200, 80, 192, 1) 25%,
+    rgba(72, 21, 208, 1) 100%
+  );
 }
