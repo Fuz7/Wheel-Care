@@ -27,7 +27,9 @@ export default function Navbar() {
 
 function IconContainer() {
   return (
-    <div className="ml-[114px] mr-[127px] flex gap-4 items-center ">
+    <div className="lg:ml-[64px] xl:ml-[84px]
+     2xl:ml-[114px]  lg:mr-[87px] xl:mr-[107px]
+      2xl:mr-[127px] flex gap-4 items-center ">
       <Link to={'/home'}>
         <img src={navbarIcon} alt="navBarIcon" className="" />
       </Link>
@@ -43,7 +45,8 @@ function NavLinks() {
   const [headerIndex, setHeaderIndex] = useState(0);
   return (
     <div className="flex">
-      <ul className="flex items-center gap-[80px] mr-[180px]">
+      <ul className="flex items-center  lg:gap-[40px] 
+      xl:gap-[60px]  2xl:gap-[80px] md:mr-[40px] lg:mr-[60px] xl:mr-[140px] 2xl:mr-[180px]">
         <li
           className={`dropDownContainer ${hoveredButton === 'Shop' ? 'active' : ''} 
           relative flex font-Roboto 
