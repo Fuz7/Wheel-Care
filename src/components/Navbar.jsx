@@ -4,37 +4,53 @@ import navDropDown from '@images/navDropDown.svg';
 import searchIcon from '@images/searchIcon.svg';
 import cartIcon from '@images/cartIcon.svg';
 import accountIcon from '@images/accountIcon.svg';
+import navbarMobileIcon from '@images/mobile/navbarMobileIcon.svg';
+import hamburgerIcon from '@images/mobile/hamburgerIcon.svg'
 import { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Navbar() {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width:1024px)' });
   return (
     <>
       <nav
         className="border-b-[1px] sticky top-0
        bg-white border-[#414141] border-solid items-center z-10"
       >
-        <div className="min-h-[70px] flex items-center mx-auto max-w-[1440px]">
-          <IconContainer></IconContainer>
+        <div className="min-h-[50px] lg:min-h-[70px] flex items-center mx-auto max-w-[1440px]">
+          <IconContainer isTabletOrMobile={isTabletOrMobile}></IconContainer>
           <NavLinks></NavLinks>
           <NavIconLinks></NavIconLinks>
         </div>
+        <img src={hamburgerIcon} className="absolute lg:hidden
+        w-[16px] h-[14px]  top-[18px] right-[26px] "
+        onClick={()=>{}}></img>
+        
       </nav>
     </>
   );
 }
 
-function IconContainer() {
+function IconContainer({isTabletOrMobile}) {
   return (
-    <div className="lg:ml-[64px] xl:ml-[84px]
+    <div
+      className="ml-[20px] sm:ml-[30px] lg:ml-[64px] xl:ml-[84px]
      2xl:ml-[114px]  lg:mr-[87px] xl:mr-[107px]
-      2xl:mr-[127px] flex gap-4 items-center ">
+      2xl:mr-[127px] flex gap-4 items-center "
+    >
       <Link to={'/home'}>
-        <img src={navbarIcon} alt="navBarIcon" className="" />
+        <img
+            src={isTabletOrMobile ? navbarMobileIcon : navbarIcon}
+          alt="navBarIcon"
+          className=" "
+        />
       </Link>
       <Link to={'/home'}>
-        <p className="font-Roboto font-bold text-2xl">Wheel Care</p>
+        <p className="font-Roboto font-bold text-[20px] lg:text-2xl">
+          Wheel Care
+        </p>
       </Link>
     </div>
   );
@@ -45,8 +61,10 @@ function NavLinks() {
   const [headerIndex, setHeaderIndex] = useState(0);
   return (
     <div className="flex">
-      <ul className="flex items-center  lg:gap-[40px] 
-      xl:gap-[60px]  2xl:gap-[80px] md:mr-[40px] lg:mr-[60px] xl:mr-[140px] 2xl:mr-[180px]">
+      <ul
+        className="items-center hidden lg:flex  lg:gap-[40px] 
+      xl:gap-[60px]  2xl:gap-[80px] md:mr-[40px] lg:mr-[60px] xl:mr-[140px] 2xl:mr-[180px]"
+      >
         <li
           className={`dropDownContainer ${hoveredButton === 'Shop' ? 'active' : ''} 
           relative flex font-Roboto 
@@ -102,24 +120,23 @@ function NavLinks() {
           </div>
         </li>
         <Link to={'/testimonial'}>
-        <li
-          onMouseEnter={() => setHoveredButton(null)}
-          className="flex font-Roboto gap-[3px] font-medium 
+          <li
+            onMouseEnter={() => setHoveredButton(null)}
+            className="flex font-Roboto gap-[3px] font-medium 
         
         text-[16px] cursor-pointer"
-        >
-          Testimonial
-        </li>
+          >
+            Testimonial
+          </li>
         </Link>
-        
+
         <Link to={'/contactUs'}>
-        <li
-          onMouseEnter={() => setHoveredButton(null)}
-          className="flex font-Roboto gap-[3px] font-medium text-[16px] cursor-pointer"
-        >
-          Contact Us
-        </li>
-        
+          <li
+            onMouseEnter={() => setHoveredButton(null)}
+            className="flex font-Roboto gap-[3px] font-medium text-[16px] cursor-pointer"
+          >
+            Contact Us
+          </li>
         </Link>
       </ul>
     </div>
@@ -128,7 +145,7 @@ function NavLinks() {
 
 function NavIconLinks() {
   return (
-    <ul className="flex items-center gap-8  ">
+    <ul className="hidden lg:flex items-center gap-8  ">
       <li className="cursor-pointer">
         <img src={searchIcon} alt="Search Icon" />
       </li>
@@ -548,12 +565,12 @@ function DropDownColumnsData({
   );
 }
 
-function DropDownColumnsLinks({ title,setHoveredButton }) {
+function DropDownColumnsLinks({ title, setHoveredButton }) {
   return (
     <div
       className="flex cursor-pointer columnContent relative gap-[2px]
      items-center max-w-fit"
-      onClick={()=>setHoveredButton(null)}
+      onClick={() => setHoveredButton(null)}
     >
       <p className="font-Roboto font-medium text-[14px]">{title}</p>
     </div>
