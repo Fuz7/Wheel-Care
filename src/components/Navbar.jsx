@@ -5,57 +5,70 @@ import searchIcon from '@images/searchIcon.svg';
 import cartIcon from '@images/cartIcon.svg';
 import accountIcon from '@images/accountIcon.svg';
 import navbarMobileIcon from '@images/mobile/navbarMobileIcon.svg';
-import hamburgerIcon from '@images/mobile/hamburgerIcon.svg'
-import { useRef, useState } from 'react';
+import hamburgerIcon from '@images/mobile/hamburgerIcon.svg';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
 export default function Navbar() {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width:1024px)' });
-  const [hamburgerClicked,setHamburgerClicked] = useState(false)
+  const [hamburgerClicked, setHamburgerClicked] = useState(false);
+  useEffect(()=>{
+    const body = document.getElementsByTagName('body')[0]
+    if(isTabletOrMobile === false) {
+      setHamburgerClicked(false)
+      body.style.overflow = 'auto'
+    }
+    if(hamburgerClicked === true){
+      body.style.overflow = 'hidden'
+    }else if(hamburgerClicked === false){
+      body.style.overflow = 'auto'
+    }
+  },[isTabletOrMobile, hamburgerClicked])
   return (
     <>
       <nav
-        className="border-b-[1px] fixed top-0 min-w-full
+        className="border-b-[1px] fixed top-0 min-w-full 
        bg-white border-[#414141] border-solid items-center z-10"
       >
-        <div className="min-h-[50px] lg:min-h-[70px] relative
-        flex   items-center mx-auto max-w-[1440px]">
-          <IconContainer isTabletOrMobile={isTabletOrMobile}></IconContainer>
-          {isTabletOrMobile? 
-          <MobileNavLinks hamburgerClicked={hamburgerClicked} 
-          setHamburgerClicked={setHamburgerClicked} />:
-          (
-            <>
-            <NavLinks></NavLinks>
-            </>
-          )
-        }
-        <NavIconLinks></NavIconLinks>
+        <div className="flex flex-col">
+          <div
+            className="min-h-[50px] lg:min-h-[70px] relative
+        flex   items-center lg:mx-auto max-w-[1440px]"
+          >
+            <IconContainer isTabletOrMobile={isTabletOrMobile}></IconContainer>
+            {isTabletOrMobile ? null : <NavLinks></NavLinks>}
+
+            <NavIconLinks></NavIconLinks>
+          </div>
+          {isTabletOrMobile? <MobileNavLinks hamburgerClicked={hamburgerClicked} />: null }
         </div>
-        <img src={hamburgerIcon} className="absolute lg:hidden
+        <img
+          src={hamburgerIcon}
+          className="absolute lg:hidden
         w-[16px] h-[14px]  top-[18px] right-[26px] "
-        onClick={()=>{setHamburgerClicked((hamburgerClicked) => !hamburgerClicked)}}></img>
-        
+          onClick={() => {
+            setHamburgerClicked((hamburgerClicked) => !hamburgerClicked);
+          }}
+        ></img>
       </nav>
     </>
   );
 }
 
-function IconContainer({isTabletOrMobile}) {
+function IconContainer({ isTabletOrMobile }) {
   return (
     <div
-      className="ml-[20px] sm:ml-[30px] lg:ml-[64px] xl:ml-[84px]
+      className="ml-[20px] lg:ml-[64px] xl:ml-[84px]
      2xl:ml-[114px]  lg:mr-[87px] xl:mr-[107px]
       2xl:mr-[127px] flex gap-4 items-center "
     >
       <Link to={'/home'}>
         <img
-            src={isTabletOrMobile ? navbarMobileIcon : navbarIcon}
+          src={isTabletOrMobile ? navbarMobileIcon : navbarIcon}
           alt="navBarIcon"
           className=" "
-          
         />
       </Link>
       <Link to={'/home'}>
@@ -172,12 +185,19 @@ function NavIconLinks() {
   );
 }
 
-function MobileNavLinks({hamburgerClicked,setHamburgerClicked}){
-  return(<div className={` absolute min-h-lvh min-w-full bg-[#f6f6f6] top-[50px] 
-  left-0 border-t  border-solid border-black ${hamburgerClicked?'visible':'invisible'}
-  z-10 `}>
-    <div className='mt-[2000px]'>asda</div>
-  </div>)
+function MobileNavLinks({ hamburgerClicked, setHamburgerClicked }) {
+
+  return (
+    <div
+      className={`  min-w-full bg-[rgb(246,246,246)] 
+ overflow-hidden max-h-lvh border-solid border-black 
+  transition-[height] duration-300
+  ${hamburgerClicked ? ' h-lvh' : '  h-0'}
+  z-10 `}
+    >
+      <div className="mt-[400px] ml-[100px]">asda</div>
+    </div>
+  );
 }
 
 function DropDownContainer({

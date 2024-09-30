@@ -35,8 +35,9 @@
 
 body {
   overflow-x: hidden;
-  position: fixed;
+
 }
+
 
 .dropDownContainer.active > div > img {
   transform: rotate(180deg);
