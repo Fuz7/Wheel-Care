@@ -5,7 +5,6 @@ import searchIcon from '@images/searchIcon.svg';
 import cartIcon from '@images/cartIcon.svg';
 import accountIcon from '@images/accountIcon.svg';
 import navbarMobileIcon from '@images/mobile/navbarMobileIcon.svg';
-import hamburgerIcon from '@images/mobile/hamburgerIcon.svg';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
@@ -44,14 +43,24 @@ export default function Navbar() {
           </div>
           {isTabletOrMobile? <MobileNavLinks hamburgerClicked={hamburgerClicked} />: null }
         </div>
-        <img
-          src={hamburgerIcon}
+        <div
+
           className="absolute lg:hidden
-        w-[16px] h-[14px]  top-[18px] right-[26px] "
+            top-[10px] right-[26px] min-w-[32px] min-h-[32px]
+            flex flex-col items-center justify-center gap-1"
           onClick={() => {
             setHamburgerClicked((hamburgerClicked) => !hamburgerClicked);
           }}
-        ></img>
+        >
+          <div className={`w-[20px] h-[2px] bg-black rounded-[4px]
+          transition-transform
+             ${hamburgerClicked?'firstLine':''}`}></div>
+          <div className={`w-[20px] h-[2px] bg-black rounded-[4px]
+             ${hamburgerClicked?'opacity-0':''}`}></div>
+          <div className={`w-[20px] h-[2px] bg-black rounded-[4px]
+          transition-transform
+             ${hamburgerClicked?'secondLine':''}`}></div>
+        </div>
       </nav>
     </>
   );

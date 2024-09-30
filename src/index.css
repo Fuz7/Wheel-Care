@@ -35,9 +35,7 @@
 
 body {
   overflow-x: hidden;
-
 }
-
 
 .dropDownContainer.active > div > img {
   transform: rotate(180deg);
@@ -82,3 +80,12 @@ body {
   );
 }
 
+.firstLine {
+  transform: translate3d(0px, 6px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg);
+}
+
+.secondLine {
+  transform: translate3d(0px, -6px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(-45deg) skew(0deg, 0deg);
+}
