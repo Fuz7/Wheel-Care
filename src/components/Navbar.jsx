@@ -46,7 +46,7 @@ export default function Navbar() {
         <div
 
           className="absolute lg:hidden
-            top-[10px] right-[26px] min-w-[32px] min-h-[32px]
+            top-[11px] right-[26px] min-w-[32px] min-h-[32px]
             flex flex-col items-center justify-center gap-1"
           onClick={() => {
             setHamburgerClicked((hamburgerClicked) => !hamburgerClicked);
@@ -194,18 +194,48 @@ function NavIconLinks() {
   );
 }
 
-function MobileNavLinks({ hamburgerClicked, setHamburgerClicked }) {
-
+function MobileNavLinks({ hamburgerClicked}) {
+  const [clickedIndex,setClickedIndex] = useState(null)
   return (
-    <div
+    <ul
       className={`  min-w-full bg-[rgb(246,246,246)] 
  overflow-hidden max-h-lvh border-solid border-black 
-  transition-[height] duration-300
-  ${hamburgerClicked ? ' h-lvh' : '  h-0'}
-  z-10 `}
-    >
-      <div className="mt-[400px] ml-[100px]">asda</div>
+  transition-[height] duration-30 flex flex-col z-10
+
+  ${hamburgerClicked ? ' h-lvh  ' : 'h-0'}`}>
+    <div className='flex gap-6 ml-6 pt-6 '>
+      <li className='min-h-[42px] min-w-[151px] rounded-[4px]
+      border border-solid border-[#5D37B7] text-[#5D37B7]v
+      flex items-center justify-center font-Poppins'>Login</li>
+      <li className='min-h-[42px] min-w-[151px] rounded-[4px]
+       bg-[#5D37B7] text-white
+      flex items-center justify-center font-Poppins'>Get In Touch</li>
     </div>
+    <div className='mt-[34px] min-h-[36px] ml-6 
+     flex flex-col gap-[40px]'>
+      <div>
+        <div className='flex flex-col max-w-[330px] border 
+        border-solid border-black min-h-[300px] rounded-[10px]'>
+        <li className='flex font-medium font-Roboto items-center  
+        pl-[9px] pt-[6px] gap-[2px]'>
+          Shop
+        <img src={navDropDown} className='max-h-[24px] max-w-[24px]' alt="" />
+
+      </li>
+      <span className='min-h-[1px] mt-[5px] bg-[#D9D9D9]'></span>
+
+      </div>
+        </div>
+        <li className='flex font-medium font-Roboto items-center gap-[2px]'>
+          Customize
+        <img src={navDropDown} className='max-h-[24px] max-w-[24px]' alt="" />
+        </li>
+        <li className='flex font-medium font-Roboto '>
+          Testimonials
+        </li>
+    </div>
+
+    </ul>
   );
 }
 
