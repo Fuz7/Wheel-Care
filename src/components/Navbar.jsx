@@ -13,20 +13,30 @@ import { useMediaQuery } from 'react-responsive';
 
 export default function Navbar() {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width:1024px)' });
+  const [hamburgerClicked,setHamburgerClicked] = useState(false)
   return (
     <>
       <nav
-        className="border-b-[1px] sticky top-0
+        className="border-b-[1px] fixed top-0 min-w-full
        bg-white border-[#414141] border-solid items-center z-10"
       >
-        <div className="min-h-[50px] lg:min-h-[70px] flex items-center mx-auto max-w-[1440px]">
+        <div className="min-h-[50px] lg:min-h-[70px] relative
+        flex   items-center mx-auto max-w-[1440px]">
           <IconContainer isTabletOrMobile={isTabletOrMobile}></IconContainer>
-          <NavLinks></NavLinks>
-          <NavIconLinks></NavIconLinks>
+          {isTabletOrMobile? 
+          <MobileNavLinks hamburgerClicked={hamburgerClicked} 
+          setHamburgerClicked={setHamburgerClicked} />:
+          (
+            <>
+            <NavLinks></NavLinks>
+            </>
+          )
+        }
+        <NavIconLinks></NavIconLinks>
         </div>
         <img src={hamburgerIcon} className="absolute lg:hidden
         w-[16px] h-[14px]  top-[18px] right-[26px] "
-        onClick={()=>{}}></img>
+        onClick={()=>{setHamburgerClicked((hamburgerClicked) => !hamburgerClicked)}}></img>
         
       </nav>
     </>
@@ -45,6 +55,7 @@ function IconContainer({isTabletOrMobile}) {
             src={isTabletOrMobile ? navbarMobileIcon : navbarIcon}
           alt="navBarIcon"
           className=" "
+          
         />
       </Link>
       <Link to={'/home'}>
@@ -62,8 +73,8 @@ function NavLinks() {
   return (
     <div className="flex">
       <ul
-        className="items-center hidden lg:flex  lg:gap-[40px] 
-      xl:gap-[60px]  2xl:gap-[80px] md:mr-[40px] lg:mr-[60px] xl:mr-[140px] 2xl:mr-[180px]"
+        className="items-center hidden lg:flex  lg:gap-[25px] 
+      xl:gap-[60px]  2xl:gap-[80px] md:mr-[30px] lg:mr-[50px] xl:mr-[140px] 2xl:mr-[180px]"
       >
         <li
           className={`dropDownContainer ${hoveredButton === 'Shop' ? 'active' : ''} 
@@ -145,7 +156,7 @@ function NavLinks() {
 
 function NavIconLinks() {
   return (
-    <ul className="hidden lg:flex items-center gap-8  ">
+    <ul className="flex items-center gap-5 lg:gap-8 ml-auto mr-[80px]  ">
       <li className="cursor-pointer">
         <img src={searchIcon} alt="Search Icon" />
       </li>
@@ -159,6 +170,14 @@ function NavIconLinks() {
       </Link>
     </ul>
   );
+}
+
+function MobileNavLinks({hamburgerClicked,setHamburgerClicked}){
+  return(<div className={` absolute min-h-lvh min-w-full bg-[#f6f6f6] top-[50px] 
+  left-0 border-t  border-solid border-black ${hamburgerClicked?'visible':'invisible'}
+  z-10 `}>
+    <div className='mt-[2000px]'>asda</div>
+  </div>)
 }
 
 function DropDownContainer({

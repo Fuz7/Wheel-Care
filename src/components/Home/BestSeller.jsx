@@ -18,7 +18,6 @@ export default function BestSeller() {
         start: 'top 40%', // Adjust this value to change when the animation starts
         end: 'top 30%', // Adjust this value to change when the animation ends
         scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        markers: true, // Remove this in production
         
       },
     });

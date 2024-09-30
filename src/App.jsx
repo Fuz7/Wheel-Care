@@ -29,7 +29,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <div className="min-h-lvh bg-[#fcfcfc] flex flex-col relative">
+      <div className="min-h-lvh bg-[#fcfcfc] overflow-hidden flex flex-col relative">
         <RouterProvider router={router}></RouterProvider>
       </div>
     </>
