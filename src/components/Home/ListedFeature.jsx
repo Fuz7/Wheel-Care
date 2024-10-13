@@ -31,7 +31,6 @@ export default function ListedFeature() {
         toggleActions:'play pause complete reset ',
         pin:true,
         pinSpacing:false,
-        markers: true,
         onUpdate:(self) => {
       // You can control how the element behaves, without transforms
       containerRef.current.style.minWidth = window.innerWidth + 'px'

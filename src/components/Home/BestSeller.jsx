@@ -6,43 +6,62 @@ import bestSellerCart from '@images/bestSellerCart.png';
 import bestSellerGaming from '@images/bestSellerGaming.png';
 import bestSellerPower from '@images/bestSellerPower.png';
 import Rating from '@mui/material/Rating';
+import { useMediaQuery } from 'react-responsive';
 gsap.registerPlugin(ScrollTrigger);
 export default function BestSeller() {
   const containerRef = useRef(null);
   const cardContainerRef = useRef();
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width:1024px)' });
+  const isFirstRender = useRef(true); 
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 40%', // Adjust this value to change when the animation starts
-        end: 'top 30%', // Adjust this value to change when the animation ends
-        scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        
-      },
-    });
-
-    // Animate all cards simultaneously
-    tl.fromTo(
-      cardContainerRef.current,
-      { opacity: 0.0 },
-      { opacity: 1, duration: 1, ease: 'back.out(1.7)' },
-    );
+    let tl = null;
+    const containerCurrentRef = containerRef.current
+    const cardContainerCurrentRef = cardContainerRef.current
+    const isFirstRenderCurrent = isFirstRender.current
+    if(!isTabletOrMobile){
+      tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 40%', // Adjust this value to change when the animation starts
+          end: 'top 30%', // Adjust this value to change when the animation ends
+          scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+          
+        },
+      });
+      
+      // Animate all cards simultaneously
+      tl.fromTo(
+        cardContainerRef.current,
+        { opacity: 0.0 },
+        { opacity: 1, duration: 1, ease: 'back.out(1.7)' },
+      );
+      containerRef.current.style.marginTop = '1800px'
+    }
     return () => {
-      tl.kill(); 
-      ScrollTrigger.killAll(); 
+      if(tl){
+        tl.kill(); 
+        ScrollTrigger.killAll(); 
+        if(!isFirstRenderCurrent){
+          gsap.to(cardContainerCurrentRef,{
+            opacity:1
+          })
+          containerCurrentRef.style.marginTop = '600px'
+        }
+      }
+      isFirstRender.current = false;
     };
-  }, []);
+  }, [isTabletOrMobile]);
 
   return (
     <section
       ref={containerRef}
-      className="mt-[1800px] flex flex-col gap-[50px]"
+      className="mt-[60px] lg:mt-[1800px] flex flex-col gap-[50px]"
     >
-      <h2 className="self-center font-Poppins-SemiBold text-[48px]">
+      <h2 className="self-center font-Poppins-SemiBold text-[40px] lg:text-[48px]">
         Our Best Seller
       </h2>
-      <div ref={cardContainerRef} className="flex gap-[75px] self-center">
+      <div ref={cardContainerRef} className="flex flex-col lg:flex-row gap-[60px] lg:gap-[10px] xl:gap-[75px] self-center">
         <Cards
           imgSrc={bestSellerCart}
           title="Cyber Wheelchair"
