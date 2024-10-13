@@ -6,34 +6,46 @@ import featInnovative from '@images/featInnovative.svg';
 import featPrecision from '@images/featPrecision.svg';
 import featCustomizable from '@images/featCustomizable.svg';
 import featExperts from '@images/featExperts.svg';
+import { useMediaQuery } from 'react-responsive';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ListedFeature() {
-
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width:1024px)' });
   const itemRefs = useRef([]); // An array of refzs
   const containerRef = useRef(null)
+  const isFirstRender = useRef(true); 
+
  useEffect(() => {
-    const timeline = gsap.timeline({
+  let timeline = null;
+  const currentContainerRef = containerRef.current;
+  const itemsRefCurrent = itemRefs.current
+  const isFirstRenderCurrent = isFirstRender.current
+  if(!isTabletOrMobile){
+    timeline = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current, // Use the first item as the trigger
         start: 'top 30%',
         end: '+=1600',
         scrub:1,
-        pinSpacing:false,
         toggleActions:'play pause complete reset ',
         pin:true,
+        pinSpacing:false,
+        markers: true,
         onUpdate:(self) => {
       // You can control how the element behaves, without transforms
+      containerRef.current.style.minWidth = window.innerWidth + 'px'
+      containerRef.current.style.maxWidth = window.innerWidth + 'px'
       const scrollProgress = self.progress;  // Scroll progress (0 to 1)
       // Apply desired behavior here
       // Example: Fix position
       if (scrollProgress > 0 && scrollProgress < 1) {
         containerRef.current.style.transform = ''
+      
       } else if(scrollProgress === 1) {
         containerRef.current.style.transform = "translate(0,1600px)";
       }
-      
+
     },
       }
 
@@ -53,25 +65,47 @@ export default function ListedFeature() {
       duration:8,
     })
 
+  }
+
     return () => {
     // Kill the timeline and ScrollTrigger on cleanup
-    timeline.kill();
-    if (ScrollTrigger.getById(timeline.vars.scrollTrigger.id)) {
-      ScrollTrigger.getById(timeline.vars.scrollTrigger.id).kill();
-    }}
-  }, []);
+    if(timeline){
+      
+      timeline.kill();
+      currentContainerRef.style.transform = '';
+      currentContainerRef.style.position = '';
+      currentContainerRef.style.height = 'fit-content'
+      currentContainerRef.style.maxHeight = 'fit-content'
+      currentContainerRef.style.paddingBottom = '90px'
+      currentContainerRef.style.minWidth = '100lvw'
+      currentContainerRef.style.maxWidth = '100lvw'
+      if(!isFirstRenderCurrent){
+        itemsRefCurrent.forEach((ref) => {
+            if(ref){
+              gsap.to(ref,{scale: 1,opacity:1})
+            }
+        })
+      }
+      if (ScrollTrigger.getById(timeline.vars.scrollTrigger.id)) {
+        ScrollTrigger.getById(timeline.vars.scrollTrigger.id).kill();
+      }}
+      isFirstRender.current = false;
+    }
+  }, [isTabletOrMobile]);
   return (
     <section
-      className="min-h-[465px] min-w-full max-w-full mt-[350px] bg-[#6228B4]
+      className="min-h-[465px] max-h-fit pb-[90px] lg:pb-0
+       min-w-full max-w-full mt-[400px] bg-[#6228B4]
        flex flex-col gap-[58px] items-center  "
        ref={containerRef}
        >
-      <p 
-
-className="mt-[25px] font-Poppins-SemiBold text-white text-[40px]">
+      <p className="mt-[25px] hidden lg:block 
+      max-w-full font-Poppins-SemiBold text-white text-[40px]">
         Crafted for Freedom. Engineered for Excellence.
       </p>
-      <div className="flex gap-[103px] mt-[58px]">
+      <div className="flex flex-col lg:flex-row gap-[70px]
+       lg:gap-[5px] xl:gap-[80px] 2xl:gap-[103px] 
+      mt-[58px] mx-auto pr-[15px]">
         <ListItem
           ref={(el) => (itemRefs.current[0] = el)}
           src={featInnovative}
