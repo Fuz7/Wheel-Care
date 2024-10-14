@@ -37,8 +37,8 @@ export default function ItemSelected() {
   },[])
   return (
     <section
-      className="min-h-[850px] min-w-[1440px]
-     max-w-[1440px] mt-[40px] flex flex-col 
+      className="min-h-[1050px] 
+     max-w-[1440px] mt-[100px] flex flex-col 
     mx-auto "
     >
       <div className="flex gap-[20px]">
@@ -103,7 +103,8 @@ export default function ItemSelected() {
             <BuyNowButton />
           </div>
         </div>
-        <div className="flex flex-col max-h-[850px] ml-[40px] mb-[50px] pb-[100px] overflow-auto">
+        <div className="flex flex-col max-h-[850px] pr-[10px] 
+        ml-[40px] mb-[50px] pb-[100px] overflow-auto">
           <ProductHeader />
           <div className="min-w-full min-h-[1px] bg-black"></div>
           <ProductDetails />
@@ -152,8 +153,8 @@ function ProductHeader() {
           167 ratings
         </p>
       </div>
-      <div className="flex mt-[4px] gap-[20px]">
-        <img src={bestSellerTag} alt="Best Seller Tag" />
+      <div className="flex mt-[4px]  flex-wrap">
+        <img className='mr-[20px]' src={bestSellerTag} alt="Best Seller Tag" />
         <img src={lightweightTag} alt="Lightweight Tag" />
       </div>
     </>
