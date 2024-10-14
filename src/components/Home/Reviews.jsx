@@ -6,64 +6,96 @@ import morganWheelchair from '@images/morganWheelchair.png';
 import { forwardRef, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useMediaQuery } from 'react-responsive';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Reviews() {
   const reviewsRef = useRef([]);
   const containerRef = useRef(null);
-
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width:1024px)' });
+  const isFirstRender = useRef(true); 
+  
   useEffect(() => {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 15%',
-        end: '+=2000',
-        pinSpacing: false,
-        scrub: 1,
-        pin: true,
-        onUpdate: (self) => {
-          const scrollProgress = self.progress; // Scroll progress (0 to 1)
-          // Apply desired behavior here
-          // Example: Fix position
-          if (scrollProgress > 0 && scrollProgress < 1) {
-            containerRef.current.style.transform = '';
-          } else if (scrollProgress === 1) {
-            containerRef.current.style.transform = 'translate(0,2000px)';
-          }
+    let timeline = null;
+    const currentContainerRef = containerRef.current
+    const reviewCurrentRef = reviewsRef.current
+    const isFirstRenderCurrent = isFirstRender.current
+    if(!isTabletOrMobile){
+      timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 15%',
+          end: '+=2000',
+          pinSpacing: false,
+          scrub: 1,
+          pin: true,
+          onUpdate: (self) => {
+            const scrollProgress = self.progress; // Scroll progress (0 to 1)
+            // Apply desired behavior here
+            // Example: Fix position
+            if (scrollProgress > 0 && scrollProgress < 1) {
+              containerRef.current.style.transform = '';
+            } else if (scrollProgress === 1) {
+              containerRef.current.style.transform = 'translate(0,2000px)';
+            }
+          },
         },
-      },
-    });
+      });
+  
+      reviewsRef.current.forEach((ref) => {
+        if (ref) {
+          timeline.fromTo(
+            ref,
+            { opacity: 0, y: 200 },
+            { opacity: 1, y: 0, duration: 2, stagger: 4, ease: 'back.out(1.7)' },
+          );
+        }
+      });
+  
+      timeline.to(reviewsRef.current[0], {
+        duration: 4,
+      });
 
-    reviewsRef.current.forEach((ref) => {
-      if (ref) {
-        timeline.fromTo(
-          ref,
-          { opacity: 0, y: 200 },
-          { opacity: 1, y: 0, duration: 2, stagger: 4, ease: 'back.out(1.7)' },
-        );
-      }
-    });
-
-    timeline.to(reviewsRef.current[0], {
-      duration: 4,
-    });
+    }
 
     return () => {
-      timeline.kill();
-      if (ScrollTrigger.getById(timeline.vars.scrollTrigger.id)) {
-        ScrollTrigger.getById(timeline.vars.scrollTrigger.id).kill();
+      if(timeline){
+
+        currentContainerRef.style.transform = '';
+        currentContainerRef.style.position = '';
+        currentContainerRef.style.height = 'fit-content'
+        currentContainerRef.style.maxHeight = 'fit-content'
+        currentContainerRef.style.paddingTop = '67px'
+        currentContainerRef.style.paddingBottom = '67px'
+        currentContainerRef.style.minWidth = '100lvw'
+        currentContainerRef.style.maxWidth = '100lvw'
+        timeline.kill();
+        if(!isFirstRenderCurrent){
+          reviewCurrentRef.forEach((ref)=>{
+            if(ref){
+              gsap.to(ref,{opacity:1,y:0})
+            }
+            
+          })
+        }
+        if (ScrollTrigger.getById(timeline.vars.scrollTrigger.id)) {
+          ScrollTrigger.getById(timeline.vars.scrollTrigger.id).kill();
+        }
       }
+      isFirstRender.current = false
     };
-  }, []);
+  }, [isTabletOrMobile]);
 
   return (
-    <section className="min-h-[450px] gap-[66px] mt-[500px] mb-[2400px] flex flex-col">
+    <section className="min-h-[450px] gap-[66px] mt-[150px] lg:mt-[500px]
+     mb-[1600px] lg:mb-[2400px] flex flex-col">
       <h2 className="self-center font-Poppins-Medium text-[48px]">Reviews</h2>
       <div
         ref={containerRef}
-        className="min-w-full min-h-[700px] reviewGradient pt-[67px]
-      flex justify-center gap-[150px]"
+        className="min-w-full min-h-[700px] reviewGradient pt-[67px] pb-[67px]
+      flex flex-col lg:flex-row items-center justify-center 
+       gap-[100px] lg:gap-[30px] xl:gap-[90px] 2xl:gap-[150px]"
       >
         <ReviewCard
           imgSrc={tankWheelchair}
@@ -113,8 +145,8 @@ const ReviewCard = forwardRef(
     return (
       <div
         ref={ref}
-        className="min-w-[350px] max-w-[350px] max-h-[550px] bg-white
-          rounded-t-[200px] flex flex-col items-center "
+        className="min-w-[350px] max-w-[350px] min-h-[550px] max-h-[550px] bg-white
+          rounded-t-[200px] flex flex-col items-center mr-[13px]"
       >
         <img className="mt-[40px]" src={imgSrc} alt="Reviewed Wheelchair" />
         <p className="mt-[18px] font-Poppins-SemiBold text-[24px]">{header}</p>

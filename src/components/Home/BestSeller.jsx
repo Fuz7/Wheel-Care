@@ -56,7 +56,7 @@ export default function BestSeller() {
   return (
     <section
       ref={containerRef}
-      className="mt-[60px] lg:mt-[1800px] flex flex-col gap-[50px]"
+      className="mt-[150px] lg:mt-[1800px] flex flex-col gap-[50px]"
     >
       <h2 className="self-center font-Poppins-SemiBold text-[40px] lg:text-[48px]">
         Our Best Seller
