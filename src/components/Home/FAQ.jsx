@@ -6,13 +6,14 @@ export default function FAQ() {
   const [isActive, setIsActive] = useState(false);
   return (
     <section
-      className="mt-[400px] mb-[500px] flex min-w-full pl-[330px] 
-    gap-[70px] pr-[360px]"
+      className="mt-[150px] lg:mt-[400px] mb-[500px] flex flex-col lg:flex-row  
+      items-center lg:items-start min-w-full  lg:justify-center
+    lg:gap-[40px] xl:gap-[70px] "
     >
-      <h2 className="font-Poppins-SemiBold text-[64px] max-w-[457px]">
+      <h2 className="font-Poppins-SemiBold text-[48px] lg:text-[64px] max-w-[9ch]">
         Frequently asked questions
       </h2>
-      <div className="flex flex-col mt-[18px] gap-4">
+      <div className="flex flex-col items-center lg:items-start mt-[18px] gap-4">
         <FaqBar
           isActive={isActive}
           setIsActive={setIsActive}
@@ -105,14 +106,14 @@ function FaqBar({ header, paragraphArray,index,isActive,setIsActive }) {
 
   return (
     <div
-      className={`max-w-[720px] min-w-[720px] min-h-[64px] 
+      className={`max-w-[720px] w-[90%] min-h-[64px] 
     flex flex-col bg-[#E6E6E6] rounded-[16px]
-     pl-[26px] pr-[20px] cursor-pointer 
+     pl-[16px] pr-[12px] lg:pl-[26px] lg:pr-[20px] cursor-pointer 
     ${isActive ===index ? 'faqDropdown--active' : ''}`}
       onClick={() => setIsActive(isActive === index?false:index)}
     >
       <div className="flex items-center justify-between min-h-[64px]">
-        <p className="font-Poppins-Medium text-[20px]">{header}</p>
+        <p className="font-Poppins-Medium text-[15px] lg:text-[20px] py-[10px]">{header}</p>
         <img
           className={`transition-transform transform ${isActive === index ? 'rotate-180' : ''}`}
           src={faqsDropdown}

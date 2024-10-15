@@ -188,7 +188,7 @@ function TheTeamCard({
     >
       <div className="flex gap-[17px]">
         <img
-          className="min-w-[92px] min-h-full object-contain w-[40%]"
+          className="min-w-[92px] rounded-sm min-h-full object-contain w-[40%]"
           src={imgSrc}
         ></img>
         <div className="flex flex-col flex-grow pr-[16px]">
@@ -225,7 +225,7 @@ function TheTeamCard({
           </p>
         </div>
       </div>
-      <p className="font-Poppins pr-[35px] mt-[10px] [font-size:clamp(10px,2.5vw,24px)] ">
+      <p className="font-Poppins pr-[35px] mt-[10px] [font-size:clamp(14px,2.5vw,24px)] ">
         {description}
       </p>
     </div>
