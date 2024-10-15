@@ -94,8 +94,8 @@ export default function Reviews() {
       <div
         ref={containerRef}
         className="min-w-full min-h-[700px] reviewGradient pt-[67px] pb-[67px]
-      flex flex-col lg:flex-row items-center justify-center 
-       gap-[100px] lg:gap-[90px] 2xl:gap-[150px]"
+      flex flex-col lg:flex-row items-center justify-evenly gap-[100px] lg:gap-0
+       "
       >
         <ReviewCard
           imgSrc={tankWheelchair}
