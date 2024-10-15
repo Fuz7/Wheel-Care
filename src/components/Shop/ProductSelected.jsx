@@ -88,8 +88,7 @@ export default function ItemSelected() {
         </div>
         <div className="flex flex-col">
           <img
-            className="min-w-[444px] min-h[444px] 
-          max-w-[444px] max-h-[444px]"
+            className="w-[444px]"
             ref={containerRef}
             src={selectedImage}
             alt=""

@@ -89,13 +89,13 @@ export default function Reviews() {
 
   return (
     <section className="min-h-[450px] gap-[66px] mt-[150px] lg:mt-[500px]
-     mb-[1600px] lg:mb-[2400px] flex flex-col">
+     mb-[100px] lg:mb-[2400px] flex flex-col">
       <h2 className="self-center font-Poppins-Medium text-[48px]">Reviews</h2>
       <div
         ref={containerRef}
         className="min-w-full min-h-[700px] reviewGradient pt-[67px] pb-[67px]
       flex flex-col lg:flex-row items-center justify-center 
-       gap-[100px] lg:gap-[30px] xl:gap-[90px] 2xl:gap-[150px]"
+       gap-[100px] lg:gap-[90px] 2xl:gap-[150px]"
       >
         <ReviewCard
           imgSrc={tankWheelchair}
@@ -146,7 +146,7 @@ const ReviewCard = forwardRef(
       <div
         ref={ref}
         className="min-w-[350px] max-w-[350px] min-h-[550px] max-h-[550px] bg-white
-          rounded-t-[200px] flex flex-col items-center mr-[13px]"
+          rounded-t-[200px] flex flex-col items-center mr-[13px] lg:mr-0 "
       >
         <img className="mt-[40px]" src={imgSrc} alt="Reviewed Wheelchair" />
         <p className="mt-[18px] font-Poppins-SemiBold text-[24px]">{header}</p>
