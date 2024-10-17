@@ -6,7 +6,8 @@ export default function Footer() {
       className="mt-auto min-w-full flex justify-center
      min-h-[250px] bg-[#272932]"
     >
-      <div className="max-w-[1440px] min-w-full items-center  pt-[16px] pb-[60px] lg:pb-0 flex 
+      <div className="max-w-[1440px] min-w-full items-center  pt-[16px] 
+      pb-[80px] lg:pb-0 flex 
       flex-col lg:flex-row lg:justify-center">
         <div className="flex items-center gap-[8px]">
           <img src={footerLogo} alt="Footer Logo" />
