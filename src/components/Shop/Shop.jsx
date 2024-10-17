@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 export default function Shop() {
   return (
     <section className="min-h-[1000px] flex flex-col items-center">
-      <div className="flex flex-col mt-[60px]  max-w-[1440px] min-w-[1440px]">
+      <div className="flex flex-col mt-[120px]  max-w-[1440px]">
         <WheelChairContainer />
         <PetWheelChairContainer />
       </div>
@@ -32,7 +32,7 @@ function WheelChairContainer() {
   },[])
   return (
     <div className="flex flex-col mb-[80px]">
-      <div className="flex justify-between">
+      <div className="flex px-[40px] justify-between">
         <h2 className="font-Roboto font-semibold text-[30px]">Wheelchairs</h2>
         
         <div className="flex items-center gap-[4px]">
@@ -74,7 +74,8 @@ function WheelChairContainer() {
           </div>
         </div>
       </div>
-      <div className="flex gap mt-[25px]">
+      <div className="grid w-lvw max-w-full px-[20px] grid-cols-2 md:grid-cols-3 self-center
+      lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 max-h-[263px] overflow-hidden mt-[25px] ">
         <ShopCard
           name={'Ultra Light Wheelchair'}
           imgSrc={ultraLight}
@@ -141,7 +142,7 @@ function ShopCard({ name, imgSrc, price, rating, tags }) {
 
   return (
     <div
-      className="min-w-[240px] min-h-[263px] border border-black
+      className="min-h-[263px] border border-black
           flex flex-col items-center cursor-pointer relative overflow-hidden
           "
       ref={elementRef}
@@ -149,16 +150,16 @@ function ShopCard({ name, imgSrc, price, rating, tags }) {
       onMouseLeave={handleMouseLeave}
     >
       <p
-        className="max-w-[200px] mt-4 text-nowrap overflow-hidden
-             text-ellipsis  text-[20px] 
+        className="max-w-[95%] mt-4 text-nowrap overflow-hidden
+             text-ellipsis  text-[16px] lg:text-[20px] 
             font-Roboto font-light max-h-[26px]"
       >
         {name}
       </p>
-      <img className="mt-[5px] rounded-[1px]" src={imgSrc} alt="Wheelchair" />
+      <img className="mt-[5px] rounded-[1px] object-contain" src={imgSrc} alt="Wheelchair" />
       <p className="mt-auto mb-[5px] font-Roboto  text-[20px]">${price}</p>
       <span
-        className="absolute bottom-0 left-0 min-w-[240px]
+        className="absolute bottom-0 left-0 min-w-full
         min-h-[150px] bg-[#000000b2] rounded-t-[2px] flex flex-col px-[15px] pt-4 pb-3
         items-center transition-transform translate-y-[150px]
         "
@@ -198,7 +199,7 @@ function ShopCard({ name, imgSrc, price, rating, tags }) {
 function PetWheelChairContainer() {
   return (
     <div
-      className="mt-90px max-w-[1440px] min-w-[1440px] flex
+      className="mt-90px max-w-[1440px] w-lvw flex
         flex-col"
     >
       <div className="flex flex-col">
