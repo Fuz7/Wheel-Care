@@ -74,12 +74,13 @@ function WheelChairContainer() {
           </div>
         </div>
       </div>
-      <div className="grid w-lvw max-w-full px-[20px] grid-cols-2 md:grid-cols-3 self-center
+      <div className="grid w-lvw gap-x-1 max-w-full px-[20px] grid-cols-2 md:grid-cols-3 self-center
       lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 max-h-[263px] overflow-hidden mt-[25px] ">
         <ShopCard
           name={'Ultra Light Wheelchair'}
           imgSrc={ultraLight}
           price="550"
+          reviews={314}
           rating={4.7}
           tags={'Sports, Ultra lightweight, Folding'}
         />
@@ -88,6 +89,7 @@ function WheelChairContainer() {
           name={'Aero Dynamic Wheelchair'}
           imgSrc={aeroWheelchair}
           price="900"
+          reviews={131}
           rating={4.8}
           tags={'Sports, lightweight, Folding, Bestseller'}
         />
@@ -96,6 +98,7 @@ function WheelChairContainer() {
           name={'Cyber Wheelchair'}
           imgSrc={cyberChair}
           price="1100"
+          reviews={91}
           rating={4.6}
           tags={'Cyberpunk, Heavy Duty'}
         />
@@ -103,6 +106,7 @@ function WheelChairContainer() {
           name={'Racing Wheelchair'}
           imgSrc={racingChair}
           price="90"
+          reviews={83}
           rating={4.6}
           tags={'Sports, Ultra lightweight, Racing Wheelchair'}
         />
@@ -110,6 +114,7 @@ function WheelChairContainer() {
           name={'Standard Wheelchair'}
           imgSrc={standardWheelchair}
           price="200"
+          reviews={74}
           rating={4.4}
           tags={'Everyday Use, Lightweight'}
         />
@@ -117,6 +122,7 @@ function WheelChairContainer() {
           name={'Celebral Palsy Wheelchair'}
           imgSrc={celebralPalsyWheelchair}
           price="400"
+          reviews={21}
           rating={4.5}
           tags={'Everyday Use, Folding'}
         />
@@ -125,7 +131,7 @@ function WheelChairContainer() {
   );
 }
 
-function ShopCard({ name, imgSrc, price, rating, tags }) {
+function ShopCard({ name, imgSrc, price, rating, tags,reviews }) {
   const elementRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -142,7 +148,7 @@ function ShopCard({ name, imgSrc, price, rating, tags }) {
 
   return (
     <div
-      className="min-h-[263px] border border-black
+      className="min-h-[263px] border border-black rounded-md
           flex flex-col items-center cursor-pointer relative overflow-hidden
           "
       ref={elementRef}
@@ -157,18 +163,18 @@ function ShopCard({ name, imgSrc, price, rating, tags }) {
         {name}
       </p>
       <img className="mt-[5px] rounded-[1px] object-contain" src={imgSrc} alt="Wheelchair" />
-      <p className="mt-auto mb-[5px] font-Roboto  text-[20px]">${price}</p>
+
       <span
-        className="absolute bottom-0 left-0 min-w-full
-        min-h-[150px] bg-[#000000b2] rounded-t-[2px] flex flex-col px-[15px] pt-4 pb-3
+        className="absolute bottom-[20px] left-0 min-w-full
+        min-h-[190px] bg-[#6228b4cb] rounded-t-[2px] flex flex-col px-[15px] pt-[12px] pb-3
         items-center transition-transform translate-y-[150px]
         "
       >
         <p
-          className="max-w-[200px] text-center text-white text-[16px] 
-          font-Roboto font-light"
+          className="max-w-[200px] text-center text-white text-[24px] 
+          font-Roboto font-extrabold"
         >
-          {name}
+          ${price}
         </p>
         <div className="mt-[10px] flex items-center justify-center gap-1">
           <Rating
@@ -183,8 +189,10 @@ function ShopCard({ name, imgSrc, price, rating, tags }) {
               },
             }}
           />
-          <p className="font-Roboto text-[14px] text-white">{rating}</p>
+          <p className="font-Roboto text-[16px] text-white">{rating}</p>
         </div>
+        <p className='font-Roboto font-light mt-[5px]
+         text-[14px] text-white'>{reviews} reviews</p>
         <p
           className="text-white mt-auto font-light 
         text-[14px]  "
@@ -253,6 +261,7 @@ function PetWheelChairContainer() {
               imgSrc={dogWheelchair}
               price="130"
               rating={4.5}
+              reviews={120}
               tags={'Dog Wheelchair'}
             />
           </Link>
@@ -260,6 +269,7 @@ function PetWheelChairContainer() {
             name={'Hog Rider '}
             imgSrc={hogRider}
             price="320"
+            reviews={112}
             rating={5.0}
             tags={'Pig Wheelchair'}
           />
@@ -274,6 +284,7 @@ function PetWheelChairContainer() {
             name={'Billy Hot Wheels'}
             imgSrc={billyHotChair}
             price="60"
+            reviews={24}
             rating={4.8}
             tags={'Duck Wheelchair'}
           />
@@ -281,12 +292,14 @@ function PetWheelChairContainer() {
             name={'Adjustable Wheelchair'}
             imgSrc={adjustableWheelchair}
             price="40"
+            reviews={43}
             rating={4.7}
             tags={'Dog Wheelchair, Adjustable'}
           />
           <ShopCard
             name={'Guinea Wheels'}
             imgSrc={guineaWheels}
+            reviews={75}
             price="20"
             rating={4.6}
             tags={'Hamster Wheelchair'}

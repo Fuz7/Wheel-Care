@@ -50,7 +50,7 @@ body {
 }
 
 .shopCardHovered > span {
-  transform: translateY(0px);
+  transform: translateY(20px);
 }
 
 .loginGradient {
