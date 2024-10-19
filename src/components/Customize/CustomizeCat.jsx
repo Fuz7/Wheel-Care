@@ -100,7 +100,7 @@ export default function CustomizeCat() {
               every Wheel Care Wheelchair is custom built, highly adjustable,
               and guaranteed to fit. Use <b>inches</b> as metric of measurement
             </p>
-            <ol className="list-decimal ml-[36px] mt-[10px] flex flex-col gap-[6px]">
+            <ol className="list-decimal ml-[36px] mt-[10px] md flex flex-col gap-[6px]">
               <li className="text-[16px] font-Poppins max-w-[375px]">
                 Height from top of back to ground
               </li>

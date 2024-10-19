@@ -6,7 +6,7 @@ export default function FAQ() {
   const [isActive, setIsActive] = useState(false);
   return (
     <section
-      className="mt-[150px] lg:mt-[400px] mb-[500px] flex flex-col lg:flex-row  
+      className="mt-[150px] ml-[20px] lg:mt-[400px] mb-[500px] flex flex-col lg:flex-row  
       items-center lg:items-start min-w-full  lg:justify-center
     lg:gap-[40px] xl:gap-[70px] "
     >
