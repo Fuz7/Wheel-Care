@@ -75,8 +75,8 @@ export default function CustomizeCat() {
       <section className={`min-w-full min-h-full bg-[#0000008a]
          absolute top-0 left-0 z-10 ${showPopup?'visible':'invisible'}`}>
         <div
-          className={`fixed top-[200px] left-[400px] rounded-[2px] 
-       min-h-[420px] min-w-[1020px] bg-white pt-[30px] flex
+          className={`fixed top-[200px] left-[10px] xl:left-[calc(75lvw-1020px)] rounded-[2px] 
+       min-h-[420px] w-[95%] max-w-[1020px] bg-white pt-[30px] flex
         transition-transform ${showPopup?'scale-100':'scale-95'}`}
         >
           <img
@@ -86,11 +86,11 @@ export default function CustomizeCat() {
             onClick={() => setShowPopup(false)}
           />
           <img
-            className="max-w-[500px] max-h-[258px] ml-[37px] mt-[51px]"
+            className="max-w-[500px] w-[50%] max-h-[258px] ml-[37px] mt-[51px]"
             src={catMeasurement}
             alt=""
           />
-          <div className="flex flex-col ml-[27px] gap-[16px]">
+          <div className="flex flex-col pr-[20px] pb-[20px] lg:pr-0 w-[50%] ml-[27px] gap-[16px]">
             <h3 className="font-Poppins-Medium text-[28px]">
               4 Basic Measurement
             </h3>
