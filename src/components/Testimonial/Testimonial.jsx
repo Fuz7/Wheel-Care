@@ -18,13 +18,14 @@ export default function Testimonial() {
   }, []);
   return (
     <section
-      className="min-h-[900px] min-w-[1440px]
+      className="min-h-[900px] w-lvw
     max-w-[1440px] mt-5 flex flex-col mx-auto"
     >
       <h2 className="font-Roboto font-medium text-[48px] self-center">
         Testimonial
       </h2>
-      <div className="px-[150px] mt-[50px] mb-[100px] columns-3">
+      <div className="mx-auto gap-x-2 mt-[50px] w-fit  mb-[100px] 
+      columns-1 lg:columns-2 xl:columns-3">
         <TestimonialCard
           pArray={[
             `Ever since I 
@@ -201,8 +202,11 @@ function TestimonialCard({
   icon,
 }) {
   return (
+
+    <div>
+
     <div
-      className="inline-block min-w-[370px] max-w-[350px]
+      className=" inline-block w-[90lvw] max-w-[370px]
   border border-black shadow-[16px_16px_4px_rgba(0,0,0,0.25)]
   mr-2 mb-2 align-top rounded-[5px] transition-transform
   hover:translate-y-[-5px]
@@ -252,6 +256,7 @@ function TestimonialCard({
           ) : null}
         </div>
       </div>
+    </div>
     </div>
   );
 }
