@@ -207,11 +207,11 @@ function ShopCard({ name, imgSrc, price, rating, tags,reviews }) {
 function PetWheelChairContainer() {
   return (
     <div
-      className="mt-90px max-w-[1440px] w-lvw flex
+      className="mt-90px  flex
         flex-col"
     >
       <div className="flex flex-col">
-        <div className="flex justify-between">
+        <div className="flex px-[40px] justify-between">
           <h2 className="font-Roboto font-semibold text-[30px]">
             Pet Wheelchairs
           </h2>
@@ -254,8 +254,10 @@ function PetWheelChairContainer() {
             </div>
           </div>
         </div>
-        <div className="flex gap mt-[25px]">
-          <Link to={'/'}>
+        <div className="grid w-lvw gap-x-1 max-w-full px-[20px] grid-cols-2 
+        md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 
+        max-h-[263px] overflow-hidden  mt-[25px]">
+  
             <ShopCard
               name={'Walking Wheels'}
               imgSrc={dogWheelchair}
@@ -264,7 +266,7 @@ function PetWheelChairContainer() {
               reviews={120}
               tags={'Dog Wheelchair'}
             />
-          </Link>
+
           <ShopCard
             name={'Hog Rider '}
             imgSrc={hogRider}
