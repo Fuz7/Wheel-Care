@@ -375,11 +375,11 @@ export function SetQuantityButtons({fontSize,imageSize,mobile}){
 export function BuyNowButton() {
   return (
     <div
-      className="min-w-[210px] min-h-[50px] flex
+      className="w-full max-w-[210px] lg:min-w-[210px] min-h-[50px] flex 
               items-center text-white font-Roboto font-black
-               bg-[#6228B4] rounded-[2px] text-[24px] cursor-pointer"
+               bg-[#6228B4] rounded-[2px] text-[16px] lg:text-[24px] cursor-pointer"
     >
-      <img src={buyNow} className="ml-[36px] mr-[8px] mb-[2px]"></img>
+      <img src={buyNow} className="ml-[16px] lg:ml-[36px] mr-[8px] mb-[2px]"></img>
       Buy Now
     </div>
   );
@@ -388,11 +388,11 @@ export function BuyNowButton() {
 export function AddToCartButton() {
   return (
     <div
-      className="min-w-[210px] min-h-[50px] flex
+      className="w-full max-w-[210px] lg:min-w-[210px] min-h-[50px] flex
               items-center text-white font-Roboto font-black
-               bg-[#6228B4] rounded-[2px] text-[24px] cursor-pointer"
+               bg-[#6228B4] rounded-[2px] text-[16px] lg:text-[24px] cursor-pointer"
     >
-      <img src={addToCart} className="ml-[20px] mr-[8px] mb-[2px]"></img>
+      <img src={addToCart} className="ml-[10px] lg:ml-[20px] mr-[8px] mb-[2px]"></img>
       Add To Cart
     </div>
   );

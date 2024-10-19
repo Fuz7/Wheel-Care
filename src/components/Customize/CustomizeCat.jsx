@@ -37,8 +37,8 @@ export default function CustomizeCat() {
   return (
     <>
       <section
-        className="min-h-[900px] min-w-[1440px]
-      max-w-[1440px] mt-5 flex flex-col mx-auto"
+        className="min-h-[900px] w-full
+      max-w-[1440px] mt-[80px] flex flex-col mx-auto"
       >
         <h2
           className="font-Roboto font-medium text-[60px]
@@ -46,13 +46,16 @@ export default function CustomizeCat() {
         >
           Customize Cat Wheelchair
         </h2>
-        <div className="flex mt-[40px] gap-[140px] ml-[80px]">
+        <div className="flex mt-[40px] w-lvw ml-[10px]
+        max-w-[1440px] gap-[40px] lg:gap-[80px] pr-[60px]
+         xl:gap-[100px] 2xl:gap-[140px] justify-center ">
           <CustomizeCatImageContainer />
-          <div className="flex flex-col max-h-[620px] pr-[50px] overflow-y-scroll">
+          <div className="flex flex-col flex-grow  max-w-[692px]
+           max-h-[620px] pr-[50px] overflow-y-scroll">
             <CustomizeCatField setShowPopup={setShowPopup} />
             <CustomizeColorContainer />
             <CustomizeRadioSelection />
-            <div className="flex gap-5 mt-[25px]">
+            <div className="flex gap-5 items-center mt-[25px]">
               <h3 className="font-Roboto text-[24px] font-medium">Quantity</h3>
               <SetQuantityButtons />
             </div>
@@ -180,14 +183,14 @@ function CustomizeCatImageContainer() {
 function CustomizeCatField({setShowPopup}) {
   return (
     <>
-      <h3 className="font-Roboto font-medium text-[26px]">Pet Name</h3>
+      <h3 className="font-Roboto font-medium text-[26px] w-[95%]">Pet Name</h3>
       <input
-        className="mt-[9px] min-w-[629px] rounded-[5px]
+        className="mt-[9px] w-[95%] max-w-[629px] rounded-[5px]
           bg-white min-h-[48px] pl-[12px] border-black
            border font-Poppins   text-[24px] "
-        type="text"
+        type="text" 
       />
-      <div className="flex items-center justify-between ">
+      <div className="flex items-center justify-between w-[95%] ">
         <h3 className="mt-[10px] text-2xl font-Roboto font-medium">
           {' '}
           Dimensions
@@ -200,13 +203,13 @@ function CustomizeCatField({setShowPopup}) {
           Size Guide
         </h3>
       </div>
-      <div className="flex gap-[17px] mt-[6px]">
+      <div className="flex gap-[17px] mt-[6px] w-[95%]">
         <div className="flex flex-col gap-[1px]">
           <h4>Girth</h4>
           <input
             className="max-w-[144px] min-h-[48px] bg-white border
                 border-black rounded-[5px] pr-[10px] font-Poppins text-[24px]
-                  text-right "
+                  text-right w-full"
             type="text"
           />
         </div>
@@ -215,7 +218,7 @@ function CustomizeCatField({setShowPopup}) {
           <input
             className="max-w-[144px] min-h-[48px] bg-white border
                 border-black rounded-[5px] pr-[10px] font-Poppins 
-                text-right text-[24px]
+                text-right text-[24px] w-full
                   "
             type="text"
           />
@@ -225,7 +228,7 @@ function CustomizeCatField({setShowPopup}) {
           <input
             className="max-w-[144px] min-h-[48px] bg-white border
                 border-black rounded-[5px] pr-[10px] 
-                 text-right font-Poppins text-[24px]
+                 text-right font-Poppins text-[24px] w-full
                   "
             type="text"
           />
@@ -235,7 +238,7 @@ function CustomizeCatField({setShowPopup}) {
           <input
             className="max-w-[144px] min-h-[48px] bg-white border
                 border-black rounded-[5px] pr-[10px] text-right 
-                font-Poppins text-[24px]
+                font-Poppins text-[24px] w-full
                   "
             type="text"
           />
@@ -253,7 +256,7 @@ function CustomizeColorContainer() {
       <div className="flex mt-[10px] gap-4">
         <div
           onClick={() => setCheckedIndex(0)}
-          className="min-h-[57px] min-w-[57px] bg-[#8C4433]
+          className="max-w-[57px] flex-grow aspect-square bg-[#8C4433]
          rounded-full flex items-center justify-center cursor-pointer"
         >
           <img
@@ -264,44 +267,44 @@ function CustomizeColorContainer() {
         </div>
         <div
           onClick={() => setCheckedIndex(1)}
-          className="min-h-[57px] min-w-[57px] bg-[#E0A2BB]
+          className="max-w-[57px] flex-grow bg-[#E0A2BB]
          rounded-full flex items-center justify-center cursor-pointer"
         >
           <img
-            className={`${checkedIndex === 1 ? 'visible' : 'invisible'}`}
+            className={`${checkedIndex === 1 ? 'visible' : 'invisible'} w-[50%]`}
             src={whiteCheck}
             alt="Check"
           ></img>
         </div>
         <div
           onClick={() => setCheckedIndex(2)}
-          className="min-h-[57px] min-w-[57px] bg-[#0641CA]
+          className="max-w-[57px] flex-grow bg-[#0641CA]
          rounded-full flex items-center justify-center cursor-pointer"
         >
           <img
-            className={`${checkedIndex === 2 ? 'visible' : 'invisible'}`}
+            className={`${checkedIndex === 2 ? 'visible' : 'invisible'} w-[50%]`}
             src={whiteCheck}
             alt="Check"
           ></img>
         </div>
         <div
           onClick={() => setCheckedIndex(3)}
-          className="min-h-[57px] min-w-[57px] bg-[#47B921]
+          className="max-w-[57px] flex-grow bg-[#47B921]
          rounded-full flex items-center justify-center cursor-pointer"
         >
           <img
-            className={`${checkedIndex === 3 ? 'visible' : 'invisible'}`}
+            className={`${checkedIndex === 3 ? 'visible' : 'invisible'} w-[50%]`}
             src={whiteCheck}
             alt="Check"
           ></img>
         </div>
         <div
           onClick={() => setCheckedIndex(4)}
-          className="min-h-[57px] min-w-[57px] bg-[#2E2E2E]
+          className="max-w-[57px] flex-grow bg-[#2E2E2E]
          rounded-full flex items-center justify-center cursor-pointer"
         >
           <img
-            className={`${checkedIndex === 4 ? 'visible' : 'invisible'}`}
+            className={`${checkedIndex === 4 ? 'visible' : 'invisible'} w-[50%] `}
             src={whiteCheck}
             alt="Check"
           ></img>
@@ -315,9 +318,9 @@ function CustomizeRadioSelection() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   return (
     <>
-      <div className="flex gap-[6px] mt-[20px]">
+      <div className="flex gap-[6px] w-full mt-[20px]">
         <div
-          className="min-w-[310px] min-h-[110px] border-[5px]
+          className="max-w-[310px] w-full min-h-[110px] border-[5px]
             border-solid border-[#999999] flex flex-col py-[14px]
              px-[19px] rounded-[5px] cursor-pointer"
           onClick={() => setSelectedIndex(0)}
@@ -340,7 +343,7 @@ function CustomizeRadioSelection() {
           </p>
         </div>
         <div
-          className="min-w-[310px] min-h-[110px] border-[5px]
+          className="w-full max-w-[310px] min-h-[110px] border-[5px]
             border-solid border-[#999999] flex flex-col py-[14px]
              px-[19px] rounded-[5px] cursor-pointer"
           onClick={() => setSelectedIndex(1)}
