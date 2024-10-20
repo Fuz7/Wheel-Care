@@ -236,7 +236,7 @@ function TheTeamCard({
       transition-transform ease-out duration-500 `}
     >
       <img
-        className="min-w-[370px] rounded-[8px]"
+        className="min-w-[370px] rounded-[8px] object-contain"
         src={imgSrc}
         alt="James Oliver"
       />
