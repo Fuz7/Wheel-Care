@@ -94,11 +94,11 @@ function NavLinks() {
   const [headerIndex, setHeaderIndex] = useState(0);
   return (
     <div className="flex">
-      <ul
+      <div
         className="items-center hidden lg:flex  lg:gap-[25px] 
       xl:gap-[60px]  2xl:gap-[80px] md:mr-[30px] lg:mr-[50px] xl:mr-[140px] 2xl:mr-[180px]"
       >
-        <li
+        <div
           className={`dropDownContainer ${hoveredButton === 'Shop' ? 'active' : ''} 
           relative flex font-Roboto 
           font-medium text-[16px] cursor-pointer`}
@@ -130,8 +130,8 @@ function NavLinks() {
             setHeaderIndex={setHeaderIndex}
             headerIndex={headerIndex}
           ></DropDownContainer>
-        </li>
-        <li
+        </div>
+        <div
           className={`dropDownContainer 
             ${hoveredButton === 'Customize' ? 'active' : ''}
              flex font-Roboto gap-[3px] 
@@ -151,46 +151,46 @@ function NavLinks() {
               alt="Navbar Dropdown"
             />
           </div>
-        </li>
+        </div>
         <Link to={'/testimonial'}>
-          <li
+          <div
             onMouseEnter={() => setHoveredButton(null)}
             className="flex font-Roboto gap-[3px] font-medium 
         
         text-[16px] cursor-pointer"
           >
             Testimonial
-          </li>
+          </div>
         </Link>
 
         <Link to={'/contactUs'}>
-          <li
+          <div
             onMouseEnter={() => setHoveredButton(null)}
             className="flex font-Roboto gap-[3px] font-medium text-[16px] cursor-pointer"
           >
             Contact Us
-          </li>
+          </div>
         </Link>
-      </ul>
+      </div>
     </div>
   );
 }
 
 function NavIconLinks() {
   return (
-    <ul className="flex items-center gap-5 lg:gap-8 ml-auto mr-[80px]  ">
-      <li className="cursor-pointer">
+    <div className="flex items-center gap-5 lg:gap-8 ml-auto mr-[80px]  ">
+      <div className="cursor-pointer">
         <img src={searchIcon} alt="Search Icon" />
-      </li>
-      <li className="cursor-pointer">
+      </div>
+      <div className="cursor-pointer">
         <img src={cartIcon} alt="Cart Icon" />
-      </li>
+      </div>
       <Link to={'/login'}>
-        <li className="cursor-pointer">
+        <div className="cursor-pointer">
           <img src={accountIcon} alt="Account Icon" />
-        </li>
+        </div>
       </Link>
-    </ul>
+    </div>
   );
 }
 

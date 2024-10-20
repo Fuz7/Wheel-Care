@@ -44,7 +44,9 @@ export default function Footer() {
           <div className="text-[20px] font-Poppins-SemiBold text-white">
             Sign up to our Newsletter
           </div>
-          <input className='max-w-[254px] font-Poppins-Medium pl-2' type="text" />
+          <input 
+          className='max-w-[254px] font-Poppins-Medium pl-2' 
+          type="text" aria-label='Sign Up Newsletter' />
         </div>
       </div>
     </section>

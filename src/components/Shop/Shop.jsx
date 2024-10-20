@@ -74,8 +74,10 @@ function WheelChairContainer() {
           </div>
         </div>
       </div>
-      <div className="grid w-lvw gap-x-1 max-w-full px-[20px] grid-cols-2 md:grid-cols-3 self-center
-      lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 max-h-[263px] overflow-hidden mt-[25px] ">
+      <div className="grid w-lvw gap-x-1 
+      max-w-full px-[20px] grid-cols-2 md:grid-cols-3 self-center
+      lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 
+      max-h-[263px] overflow-hidden mt-[25px] ">
         <ShopCard
           name={'Ultra Light Wheelchair'}
           imgSrc={ultraLight}
